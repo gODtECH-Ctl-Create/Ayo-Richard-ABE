@@ -40,6 +40,7 @@ jobs:
           # are rendered with CSS so Safari cannot substitute emoji glyphs.
           html = html.replace('<span>↗</span>', '')
           html = html.replace('<span>↓</span>', '')
+          html = html.replace('<span>↑</span>', '')
           html = html.replace('<span class="card-arrow">↗</span>', '<span class="card-arrow" aria-hidden="true"></span>')
 
           # Defensive cleanup for any other Unicode arrow characters that may
@@ -53,6 +54,7 @@ jobs:
           /* GitHub Pages icon normalization: never rely on Unicode arrows. */
           .nav-github::after,
           .project-link::after,
+          .text-link::after,
           .button[target="_blank"]::after {
             content: "";
             width: 0.72em;
@@ -79,15 +81,31 @@ jobs:
             );
           }
 
+          .contact-actions .button-secondary[href="#work"]::after,
+          .footer-wrap a[href="#top"]::after {
+            content: "";
+            width: 0.72em;
+            height: 0.82em;
+            flex: 0 0 0.72em;
+            display: inline-block;
+            background: currentColor;
+            clip-path: polygon(
+              34% 100%, 66% 100%, 66% 38%, 88% 38%,
+              50% 0%, 12% 38%, 34% 38%
+            );
+          }
+
           .nav-github,
           .project-link,
-          .button[target="_blank"],
-          .hero-actions .button-primary[href="#work"] {
+          .text-link,
+          .button,
+          .footer-wrap a {
             align-items: center;
           }
 
           .nav-github span,
           .project-link span,
+          .text-link span,
           .button span:empty {
             display: none !important;
           }
@@ -97,6 +115,18 @@ jobs:
           styles = css.read_text(encoding='utf-8')
           if 'GitHub Pages icon normalization: never rely on Unicode arrows.' not in styles:
               css.write_text(styles + '\n' + icons, encoding='utf-8')
+          PY
+
+      - name: Inject site interaction layer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          tag = '<script src="ui-enhancements.js"></script>'
+          if tag not in html:
+              html = html.replace('</body>', f'  {tag}\n</body>')
+          path.write_text(html, encoding='utf-8')
           PY
 
       - name: Upload site
