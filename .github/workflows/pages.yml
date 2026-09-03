@@ -27,6 +27,78 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Remove emoji arrows and add clean interface icons
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          page = Path('index.html')
+          html = page.read_text(encoding='utf-8')
+
+          # Remove arrow-only spans from the source markup. The clean icons below
+          # are rendered with CSS so Safari cannot substitute emoji glyphs.
+          html = html.replace('<span>↗</span>', '')
+          html = html.replace('<span>↓</span>', '')
+          html = html.replace('<span class="card-arrow">↗</span>', '<span class="card-arrow" aria-hidden="true"></span>')
+
+          # Defensive cleanup for any other Unicode arrow characters that may
+          # have been added to the page later.
+          for arrow in ('↗', '↘', '↖', '↙', '→', '←', '↑', '↓', '↔', '↕'):
+              html = html.replace(arrow, '')
+
+          page.write_text(html, encoding='utf-8')
+
+          icons = '''
+          /* GitHub Pages icon normalization: never rely on Unicode arrows. */
+          .nav-github::after,
+          .project-link::after,
+          .button[target="_blank"]::after {
+            content: "";
+            width: 0.72em;
+            height: 0.72em;
+            flex: 0 0 0.72em;
+            display: inline-block;
+            background: currentColor;
+            clip-path: polygon(
+              28% 0%, 100% 0%, 100% 72%, 84% 72%, 84% 28%,
+              30% 82%, 18% 70%, 72% 16%, 28% 16%
+            );
+          }
+
+          .hero-actions .button-primary[href="#work"]::after {
+            content: "";
+            width: 0.72em;
+            height: 0.82em;
+            flex: 0 0 0.72em;
+            display: inline-block;
+            background: currentColor;
+            clip-path: polygon(
+              34% 0%, 66% 0%, 66% 62%, 88% 62%,
+              50% 100%, 12% 62%, 34% 62%
+            );
+          }
+
+          .nav-github,
+          .project-link,
+          .button[target="_blank"],
+          .hero-actions .button-primary[href="#work"] {
+            align-items: center;
+          }
+
+          .nav-github span,
+          .project-link span,
+          .button span:empty {
+            display: none !important;
+          }
+          '''
+
+          css = Path('styles.css')
+          styles = css.read_text(encoding='utf-8')
+          if 'GitHub Pages icon normalization: never rely on Unicode arrows.' not in styles:
+              css.write_text(styles + '\n' + icons, encoding='utf-8')
+          PY
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
