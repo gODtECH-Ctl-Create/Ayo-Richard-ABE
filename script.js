@@ -47,7 +47,7 @@ const initProfileFlip = () => {
       <span class="micro-label">ABOUT ME</span>
     </div>
     <div class="flip-back-photo-wrap">
-      <img src="assets/gODtECH.png" alt="Ayo Richard Abe" class="flip-back-photo" />
+      <img src="./assets/gODtECH.png?v=20260903" alt="Ayo Richard Abe" class="flip-back-photo" />
       <div class="flip-back-fallback" aria-hidden="true">AR</div>
     </div>
     <div class="flip-back-content">
@@ -222,8 +222,13 @@ const initProfileFlip = () => {
   const fallback = back.querySelector('.flip-back-fallback');
   fallback.style.display = 'none';
   photo.addEventListener('error', () => {
-    photo.style.display = 'none';
-    fallback.style.display = 'grid';
+    if (photo.dataset.fallbackTried === 'true') {
+      photo.style.display = 'none';
+      fallback.style.display = 'grid';
+      return;
+    }
+    photo.dataset.fallbackTried = 'true';
+    photo.src = 'https://raw.githubusercontent.com/gODtECH-Ctl-Create/Ayo-Richard-ABE/main/assets/gODtECH.png';
   });
 
   let flipped = false;
