@@ -47,7 +47,7 @@ const initProfileFlip = () => {
       <span class="micro-label">ABOUT ME</span>
     </div>
     <div class="flip-back-photo-wrap">
-      <img src="assets/profile.jpg" alt="Ayo Richard Abe" class="flip-back-photo" />
+      <img src="assets/gODtECH.png" alt="Ayo Richard Abe" class="flip-back-photo" />
       <div class="flip-back-fallback" aria-hidden="true">AR</div>
     </div>
     <div class="flip-back-content">
@@ -220,6 +220,7 @@ const initProfileFlip = () => {
 
   const photo = back.querySelector('.flip-back-photo');
   const fallback = back.querySelector('.flip-back-fallback');
+  fallback.style.display = 'none';
   photo.addEventListener('error', () => {
     photo.style.display = 'none';
     fallback.style.display = 'grid';
@@ -247,8 +248,75 @@ const initProfileFlip = () => {
   window.setInterval(toggleFlip, 3000);
 };
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initProfileFlip);
-} else {
+const initProjectSlideshows = () => {
+  const visuals = [...document.querySelectorAll('.project-visual[data-project-assets]')];
+  if (!visuals.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const filenames = ['01.jpg', '02.jpg', '03.jpg'];
+
+  visuals.forEach((visual) => {
+    const slidesContainer = visual.querySelector('.project-slides');
+    const basePath = visual.dataset.projectAssets;
+    if (!slidesContainer || !basePath) return;
+
+    const loadedSlides = [];
+    let currentIndex = 0;
+    let intervalId = null;
+
+    const showSlide = (slide) => {
+      loadedSlides.forEach((item) => item.classList.toggle('is-active', item === slide));
+      currentIndex = Math.max(0, loadedSlides.indexOf(slide));
+    };
+
+    const startRotation = () => {
+      if (reduceMotion || intervalId || loadedSlides.length < 2) return;
+      intervalId = window.setInterval(() => {
+        if (loadedSlides.length < 2) return;
+        currentIndex = (currentIndex + 1) % loadedSlides.length;
+        showSlide(loadedSlides[currentIndex]);
+      }, 1800);
+    };
+
+    filenames.forEach((filename, index) => {
+      const img = document.createElement('img');
+      img.className = 'project-slide';
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.dataset.index = String(index);
+
+      img.addEventListener('load', () => {
+        loadedSlides.push(img);
+        loadedSlides.sort((a, b) => Number(a.dataset.index) - Number(b.dataset.index));
+        visual.classList.add('has-project-images');
+
+        if (loadedSlides.length === 1) {
+          showSlide(img);
+        } else if (!reduceMotion) {
+          showSlide(loadedSlides[currentIndex]);
+        }
+
+        startRotation();
+      });
+
+      img.addEventListener('error', () => {
+        img.remove();
+      });
+
+      img.src = `${basePath}/${filename}`;
+      slidesContainer.appendChild(img);
+    });
+  });
+};
+
+const init = () => {
   initProfileFlip();
+  initProjectSlideshows();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
 }
