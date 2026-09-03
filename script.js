@@ -72,58 +72,89 @@ const initProfileFlip = () => {
   const style = document.createElement('style');
   style.textContent = `
     .hero-card[data-flip-ready="true"] {
+      position: relative;
+      min-height: 520px !important;
+      height: 520px !important;
       padding: 0 !important;
       background: transparent !important;
       border: 0 !important;
       box-shadow: none !important;
       perspective: 1200px;
+      isolation: isolate;
       cursor: pointer;
+      overflow: visible !important;
     }
+
     .hero-card-inner {
       position: relative;
       width: 100%;
-      min-height: 520px;
+      height: 100%;
+      min-height: 0 !important;
+      transform: none !important;
       transform-style: preserve-3d;
-      transition: transform .85s cubic-bezier(.2,.7,.2,1);
     }
-    .hero-card.is-flipped .hero-card-inner {
-      transform: rotateY(180deg);
-    }
+
     .hero-card-face {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      min-height: 520px;
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      margin: 0 !important;
       overflow: hidden;
       border: 1px solid var(--ink);
       border-radius: 30px;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden !important;
+      -webkit-backface-visibility: hidden !important;
+      transform-origin: center center;
+      transform-style: flat;
+      will-change: transform, opacity;
+      transition: transform .78s cubic-bezier(.2,.7,.2,1), opacity .28s ease;
     }
+
     .hero-card-front {
+      z-index: 2;
+      opacity: 1;
+      transform: rotateY(0deg) translateZ(1px) !important;
       padding: 22px;
       background: var(--ink);
       color: #fff;
       box-shadow: var(--shadow);
+      pointer-events: auto;
     }
-    .hero-card-front::before {
-      content: "";
-      position: absolute;
-      inset: -30% -20% auto auto;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(183,255,60,.32), transparent 66%);
-      pointer-events: none;
-    }
+
     .hero-card-back {
+      z-index: 1;
+      opacity: 0;
+      transform: rotateY(-180deg) translateZ(1px) !important;
       display: flex;
       flex-direction: column;
       padding: 24px;
       background: var(--accent);
       color: var(--ink);
-      transform: rotateY(180deg);
+      pointer-events: none;
     }
+
+    .hero-card.is-flipped .hero-card-front {
+      z-index: 1;
+      opacity: 0;
+      transform: rotateY(180deg) translateZ(1px) !important;
+      pointer-events: none;
+    }
+
+    .hero-card.is-flipped .hero-card-back {
+      z-index: 2;
+      opacity: 1;
+      transform: rotateY(0deg) translateZ(1px) !important;
+      pointer-events: auto;
+    }
+
+    .hero-card-top,
+    .hero-card-bottom {
+      position: relative;
+      z-index: 2;
+    }
+
     .flip-back-top,
     .flip-back-footer {
       display: flex;
@@ -131,9 +162,11 @@ const initProfileFlip = () => {
       justify-content: space-between;
       gap: 12px;
     }
+
     .hero-card-back .micro-label {
       color: rgba(17,17,15,.48);
     }
+
     .flip-back-photo-wrap {
       position: relative;
       display: grid;
@@ -146,7 +179,9 @@ const initProfileFlip = () => {
       overflow: hidden;
       background: rgba(255,255,255,.35);
       box-shadow: 0 18px 48px rgba(17,17,15,.14);
+      flex: 0 0 auto;
     }
+
     .flip-back-photo,
     .flip-back-fallback {
       position: absolute;
@@ -154,11 +189,14 @@ const initProfileFlip = () => {
       width: 100%;
       height: 100%;
     }
+
     .flip-back-photo {
+      display: block;
       object-fit: cover;
     }
+
     .flip-back-fallback {
-      display: grid;
+      display: none;
       place-items: center;
       background: var(--ink);
       color: var(--accent);
@@ -167,9 +205,11 @@ const initProfileFlip = () => {
       font-weight: 700;
       letter-spacing: -.06em;
     }
+
     .flip-back-content {
       text-align: center;
     }
+
     .flip-back-content h3 {
       margin: 6px 0 10px;
       font-family: "Space Grotesk", Arial, sans-serif;
@@ -177,6 +217,7 @@ const initProfileFlip = () => {
       line-height: .96;
       letter-spacing: -.06em;
     }
+
     .flip-back-content > p:last-of-type {
       max-width: 310px;
       margin: 0 auto;
@@ -184,6 +225,7 @@ const initProfileFlip = () => {
       font-size: 13px;
       line-height: 1.6;
     }
+
     .flip-back-tags {
       display: flex;
       flex-wrap: wrap;
@@ -191,6 +233,7 @@ const initProfileFlip = () => {
       gap: 7px;
       margin-top: 18px;
     }
+
     .flip-back-tags span {
       padding: 6px 8px;
       border: 1px solid rgba(17,17,15,.14);
@@ -198,6 +241,7 @@ const initProfileFlip = () => {
       font-weight: 800;
       letter-spacing: .08em;
     }
+
     .flip-back-footer {
       margin-top: auto;
       padding-top: 18px;
@@ -206,21 +250,81 @@ const initProfileFlip = () => {
       font-weight: 800;
       letter-spacing: .12em;
     }
-    @media (max-width: 720px) {
-      .hero-card-inner,
-      .hero-card-face { min-height: 460px; }
-      .flip-back-photo-wrap { width: 150px; height: 150px; margin-top: 28px; }
-      .flip-back-content h3 { font-size: 31px; }
+
+    .card-arrow {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      font-size: 0 !important;
     }
-    @media (prefers-reduced-motion: reduce) {
-      .hero-card-inner { transition: none; }
+
+    .card-arrow::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: translate(-2px, 2px);
+    }
+
+    .card-arrow::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      background: currentColor;
+      transform: rotate(-45deg);
+    }
+
+    .button span,
+    .project-link span,
+    .nav-github span {
+      font-family: Arial, sans-serif !important;
+      font-variant-emoji: text;
+    }
+
+    @media (max-width: 720px) {
+      .hero-card[data-flip-ready="true"] {
+        min-height: 460px !important;
+        height: 460px !important;
+      }
+
+      .hero-card-face {
+        border-radius: 24px;
+      }
+
+      .hero-card-back {
+        padding: 20px;
+      }
+
+      .flip-back-photo-wrap {
+        width: 150px;
+        height: 150px;
+        margin: 28px auto 22px;
+      }
+
+      .flip-back-content h3 {
+        font-size: 31px;
+      }
+
+      .flip-back-content > p:last-of-type {
+        max-width: 280px;
+        font-size: 12px;
+      }
+
+      .flip-back-tags {
+        margin-top: 14px;
+      }
     }
   `;
   document.head.appendChild(style);
 
   const photo = back.querySelector('.flip-back-photo');
   const fallback = back.querySelector('.flip-back-fallback');
-  fallback.style.display = 'none';
   photo.addEventListener('error', () => {
     if (photo.dataset.fallbackTried === 'true') {
       photo.style.display = 'none';
@@ -231,11 +335,16 @@ const initProfileFlip = () => {
     photo.src = 'https://raw.githubusercontent.com/gODtECH-Ctl-Create/Ayo-Richard-ABE/main/assets/gODtECH.png';
   });
 
+  const cardArrow = front.querySelector('.card-arrow');
+  if (cardArrow) cardArrow.textContent = '';
+
   let flipped = false;
-  const toggleFlip = () => {
-    flipped = !flipped;
+  const setFlipped = (value) => {
+    flipped = value;
     card.classList.toggle('is-flipped', flipped);
   };
+
+  const toggleFlip = () => setFlipped(!flipped);
 
   card.addEventListener('click', toggleFlip);
   card.addEventListener('keydown', (event) => {
@@ -244,11 +353,10 @@ const initProfileFlip = () => {
       toggleFlip();
     }
   });
+
   card.tabIndex = 0;
   card.setAttribute('role', 'button');
   card.setAttribute('aria-label', 'Profile card that flips between GitHub profile and personal profile');
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   window.setInterval(toggleFlip, 3000);
 };
@@ -298,7 +406,7 @@ const initProjectSlideshows = () => {
 
         if (loadedSlides.length === 1) {
           showSlide(img);
-        } else if (!reduceMotion) {
+        } else {
           showSlide(loadedSlides[currentIndex]);
         }
 
