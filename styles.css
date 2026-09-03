@@ -83,12 +83,17 @@ button, input, textarea, select { font: inherit; }
 .project-kind { color: #85857f; }
 .project-visual { min-height: 280px; margin: 18px; position: relative; overflow: hidden; border: 1px solid rgba(17,17,15,.1); }
 .featured .project-visual { min-height: 100%; margin: 18px 0 18px 18px; }
-.visual-label { position: absolute; left: 18px; top: 16px; z-index: 2; font-size: 9px; font-weight: 700; letter-spacing: .13em; }
+.visual-label { position: absolute; left: 18px; top: 16px; z-index: 4; font-size: 9px; font-weight: 700; letter-spacing: .13em; }
 .visual-green { background: var(--accent); }
 .visual-dark { background: #191916; color: #fff; }
 .visual-light { background: #e9ebe3; }
 .visual-paper { background: #fafaf8; }
 .visual-purple { background: #d9d1ff; }
+.project-slides { position: absolute; inset: 0; z-index: 1; overflow: hidden; background: inherit; }
+.project-slides::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17,17,15,.18), transparent 32%, rgba(17,17,15,.14)); pointer-events: none; }
+.project-slide { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; opacity: 0; transition: opacity 900ms ease; }
+.project-slide.is-active { opacity: 1; }
+.project-visual.has-project-images .project-placeholder { opacity: 0; pointer-events: none; }
 .mock-panel { position: absolute; right: 8%; left: 8%; bottom: 12%; padding: 12px; border: 1px solid rgba(17,17,15,.14); background: rgba(255,255,255,.72); box-shadow: 0 18px 44px rgba(17,17,15,.1); }
 .mock-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 5px; border-bottom: 1px solid rgba(17,17,15,.1); font-size: 11px; }
 .mock-row:last-child { border-bottom: 0; }
