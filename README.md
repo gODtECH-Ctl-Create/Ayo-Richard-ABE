@@ -14,12 +14,16 @@ A major part of my work is helping developers and teams reduce friction through 
 
 ## Selected work
 
-- **Proqurement** · procurement product by BuMarS
-- **OHealth+** · health technology platform
-- **Lead Engine** · lead and workflow automation system
-- **Cyfamod SMS** · school management platform
-- **Vettika** · product development and collaboration project
-- More projects and experiments are added as the GitHub portfolio grows.
+- **Proqurement** · procurement product by BuMarS · https://proqurement.onrender.com/
+- **OHealth+** · health technology platform · landing page link pending
+- **Lead Engine** · lead and workflow automation system · https://github.com/gODtECH-Ctl-Create/lead-engine
+- **Cyfamod SMS** · school management platform · live link pending
+- **Vettika** · product development and collaboration project · https://vettika.com
+- **ABE TechLab** · technology lab and product studio · https://a-b-e-tech-lab.vercel.app
+- **ABE TechLab Operations** · operations system · https://abe-tech-lab-operations.vercel.app
+- **Waste2Light** · renewable-energy and innovation platform · https://waste2light.com
+- **Snare** · supply-chain security scanner for Git repositories · https://avioflagos.github.io/snare/
+- More projects and experiments are added as the portfolio grows.
 
 ## Tech
 
