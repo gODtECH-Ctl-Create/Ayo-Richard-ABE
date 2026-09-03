@@ -1,57 +1,36 @@
-# Hey, I'm Ayo Richard Abe 👋
+# Ayo Richard Abe · gODtECH
 
-### God TECH! 
+Personal portfolio site for **Ayo Richard Abe**, a product developer, product manager, and systems builder.
 
-I'm a Product Manager, Product Developer, and Technology Strategist interested in turning ideas into useful products and real-world solutions.
+The site presents selected software products, product collaborations, experiments, and developer-focused systems work.
 
-I work across product strategy, technology, user experience, business development, and growth. A lot of my work starts with a simple question: **how can technology make this problem easier, better, or more useful for people?**
+## Positioning
 
-From there, I enjoy taking an idea through the messy middle, understanding the problem, shaping the product, thinking through the experience, working out the systems behind it, and helping turn it into something people can actually use.
+> I build products that make difficult work feel simpler.
 
-Over time, I've worked on products and experiments across areas like Artificial Intelligence (AI), education, procurement, business operations, professional platforms, community technology,health,automation, and digital services. Some are early experiments, some are products being actively developed, and others have grown into much larger ideas.
+I work across product strategy, software development, systems thinking, user experience, Artificial Intelligence (AI), automation, and delivery.
 
-I also enjoy the work that happens outside the code. I've been involved in marketing, community building, project coordination, team collaboration, product research, and helping people move from an idea to an actual plan.
+A major part of my work is helping developers and teams reduce friction through clearer workflows, practical internal tools, reusable systems, and automation.
 
-Technically, I work mostly around **JavaScript, TypeScript, Python, React, Next.js, Node.js, PostgreSQL, Supabase, and modern web technologies**, while also exploring Artificial Intelligence, automation, and new ways of building digital products.
+## Selected work
 
-I'm particularly interested in the space where **product, technology, business, and people meet**.
+- **Proqurement** · procurement product by BuMarS
+- **OHealth+** · health technology platform
+- **Lead Engine** · lead and workflow automation system
+- **Cyfamod SMS** · school management platform
+- **Vettika** · product development and collaboration project
+- More projects and experiments are added as the GitHub portfolio grows.
 
-I don't believe building is only about writing code or designing screens. It's about understanding the problem, making good decisions, building the right thing, and continuously figuring out how to make it better.
+## Tech
 
-### A few things you'll find here
+JavaScript · TypeScript · React · Next.js · Node.js · Python · PostgreSQL · Supabase · GitHub · Figma
 
-- Product ideas and experiments
-- Web applications and digital products
-- Artificial Intelligence and automation projects
-- Product and user experience experiments
-- Technical prototypes
-- Business and technology systems
-- Open-source work and things I'm learning along the way
+## GitHub Pages
 
-I'm always exploring, building, learning, and trying to turn the next good idea into something real.
+This repository is a static HTML/CSS/JavaScript site. A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the repository to GitHub Pages.
 
----
+The project intentionally avoids a framework build step so it can stay lightweight, fast, and easy to maintain.
 
-### 🛠️ Tools & Technologies
+## Repository
 
-**Languages:** JavaScript · TypeScript · Python · SQL
-
-**Frontend:** React · Next.js · Tailwind CSS · Flutter
-
-**Backend & Data:** Node.js · Express · Supabase · PostgreSQL · Firebase
-
-**AI & Automation:** OpenAI · AI Agents · APIs · Automation · LangChain
-
-**Product & Design:** Figma · Notion · UX · Product Strategy · Prototyping
-
-**Tools:** GitHub · Vercel · Cloudflare · GitHub Actions
-
----
-
-### 🌍 Let's Build
-
-I'm interested in collaborating on meaningful products, interesting technical problems, ambitious ideas, and projects that can create real value.
-
-If you're building something interesting, I'm always open to a conversation.
-
-**Build something useful. Make it matter.**
+https://github.com/gODtECH-Ctl-Create/Ayo-Richard-ABE
