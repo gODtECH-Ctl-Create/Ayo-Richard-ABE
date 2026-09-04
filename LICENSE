@@ -3,12 +3,29 @@ PROPRIETARY SOFTWARE LICENSE
 Copyright (c) 2026 Ayo Richard Abe
 All rights reserved.
 
-This repository contains proprietary software, source code, documentation, designs, and other materials owned or controlled by the copyright holder.
+1. OWNERSHIP
+This repository and its contents, including source code, documentation, designs, interfaces, architecture, configuration, and other original materials, are proprietary and are owned or controlled by the copyright holder, except for third-party materials identified as being subject to separate licenses.
 
-No permission is granted to copy, modify, merge, publish, distribute, sublicense, sell, or create derivative works from this repository or any substantial portion of its contents, except where a separate written agreement or third-party license expressly permits such use.
+2. NO LICENSE GRANTED
+Except for the limited rights expressly stated in this license or granted by a separate written agreement, no permission or license is granted to copy, reproduce, modify, adapt, translate, merge, publish, distribute, sublicense, sell, lease, rent, transfer, create derivative works from, or otherwise exploit this repository or any substantial portion of its contents.
 
-You may view and fork this repository through GitHub's platform in accordance with GitHub's Terms of Service, but such access does not grant any additional rights to reuse, redistribute, or commercialize the contents.
+3. COMMERCIAL AND PRODUCTION USE
+Without prior written permission from the copyright holder, you may not use this software or substantial portions of its source code in a commercial product, paid service, hosted service, Software-as-a-Service offering, internal commercial system, competing product, or other revenue-generating activity.
 
-Third-party libraries, assets, trademarks, and other materials included in or referenced by this repository remain subject to their respective licenses and ownership terms.
+4. REDISTRIBUTION
+You may not redistribute this software, modified versions of it, substantial portions of its source code, or packaged copies of it outside the permissions expressly granted by this license or a separate written agreement.
 
-THE SOFTWARE AND OTHER MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THE MATERIALS.
+5. GITHUB ACCESS
+This repository may be publicly viewable and may be forkable through GitHub's platform. Such platform functionality does not grant additional rights to reuse, modify, redistribute, or commercialize the repository beyond the rights provided by GitHub's Terms of Service and this license.
+
+6. THIRD-PARTY MATERIALS
+Third-party libraries, frameworks, assets, trademarks, content, and other materials included in or referenced by this repository remain subject to their respective licenses and ownership terms. This license does not override those separate rights.
+
+7. CONTRIBUTIONS
+Unless a separate written agreement states otherwise, contributions submitted to this repository may be used, modified, and distributed by the copyright holder as part of the project.
+
+8. NO WARRANTY
+THE SOFTWARE AND OTHER MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM OR RELATED TO THE USE OF THE MATERIALS.
+
+9. PERMISSION REQUESTS
+Requests for commercial use, licensing, redistribution, partnership, or other permissions not granted by this license must be made directly to the copyright holder and may be subject to a separate written agreement.
