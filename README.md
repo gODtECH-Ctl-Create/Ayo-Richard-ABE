@@ -1,40 +1,102 @@
-# Ayo Richard Abe · gODtECH
+<div align="center">
 
-Personal portfolio site for **Ayo Richard Abe**, a product developer, product manager, and systems builder.
+# 👋 Ayo Richard Abe · gODtECH
 
-The site presents selected software products, product collaborations, experiments, and developer-focused systems work.
+### Product thinker. Systems builder. Technology practitioner.
 
-## Positioning
+<p>
+<img src="https://img.shields.io/badge/focus-product%20%26%20systems-111827" alt="Product and systems">
+<img src="https://img.shields.io/badge/status-active%20portfolio-0f766e" alt="Active portfolio">
+<img src="https://img.shields.io/badge/license-proprietary-7c3aed" alt="Proprietary license">
+</p>
 
-> I build products that make difficult work feel simpler.
+**I build products that make difficult work feel simpler.**
 
-I work across product strategy, software development, systems thinking, user experience, Artificial Intelligence (AI), automation, and delivery.
+</div>
 
-A major part of my work is helping developers and teams reduce friction through clearer workflows, practical internal tools, reusable systems, and automation.
+---
 
-## Selected work
+## 🧭 What this repository is
 
-- **Proqurement** · procurement product by BuMarS · https://proqurement.onrender.com/
-- **OHealth+** · health technology platform · landing page link pending
-- **Lead Engine** · lead and workflow automation system · https://github.com/gODtECH-Ctl-Create/lead-engine
-- **Cyfamod SMS** · school management platform · live link pending
-- **Vettika** · product development and collaboration project · https://vettika.com
-- **ABE TechLab** · technology lab and product studio · https://a-b-e-tech-lab.vercel.app
-- **ABE TechLab Operations** · operations system · https://abe-tech-lab-operations.vercel.app
-- **Waste2Light** · renewable-energy and innovation platform · https://waste2light.com
-- **Snare** · supply-chain security scanner for Git repositories · https://avioflagos.github.io/snare/
-- More projects and experiments are added as the portfolio grows.
+This repository contains the personal portfolio site for **Ayo Richard Abe**, presenting selected products, collaborations, experiments, systems work, and product-development thinking.
 
-## Tech
+<table>
+<tr><td width="50%">
+
+### 🧠 Product
+Product strategy, discovery, roadmaps, workflows, and delivery.
+
+### ⚙️ Systems
+Internal tools, automation, architecture, and operational systems.
+
+</td><td width="50%">
+
+### 💻 Technology
+JavaScript, TypeScript, React, Next.js, Node.js, Python, PostgreSQL, and Supabase.
+
+### 🤖 Artificial Intelligence
+AI-assisted workflows, agents, research, and automation.
+
+</td></tr>
+</table>
+
+## 🚀 Selected work
+
+| Product / project | Focus |
+| --- | --- |
+| **Proqurement** | Construction procurement and market discovery |
+| **OHealth+** | Healthcare technology |
+| **Lead Engine** | Recruitment intelligence and workflow automation |
+| **Cyfamod SMS** | School management |
+| **SAYRR** | Voice-first text input |
+| **ABE TechLab** | Product studio and technology lab |
+| **ABE TechLab Operations** | Internal operations system |
+| **Waste2Light** | Renewable-energy and innovation |
+| **Snare** | Software supply-chain security |
+
+<details open>
+<summary><strong>🧩 How the portfolio fits together</strong></summary>
+
+```mermaid
+graph TD
+    A[Ayo Richard Abe] --> B[Product Strategy]
+    A --> C[Software Products]
+    A --> D[Internal Systems]
+    A --> E[Research & Experiments]
+    C --> F[Construction]
+    C --> G[Healthcare]
+    C --> H[Education]
+    C --> I[Developer & AI Tools]
+    D --> J[ABE TechLab Operations]
+```
+
+</details>
+
+## 🛠️ Core toolkit
 
 JavaScript · TypeScript · React · Next.js · Node.js · Python · PostgreSQL · Supabase · GitHub · Figma
 
-## GitHub Pages
+## 🌐 Site architecture
 
-This repository is a static HTML/CSS/JavaScript site. A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the repository to GitHub Pages.
+This is a lightweight static HTML, CSS, and JavaScript site deployed with GitHub Pages through `.github/workflows/pages.yml`.
 
-The project intentionally avoids a framework build step so it can stay lightweight, fast, and easy to maintain.
+<details>
+<summary><strong>📁 Repository map</strong></summary>
 
-## Repository
+```text
+index.html
+styles/
+scripts/
+assets/
+.github/workflows/pages.yml
+```
 
-https://github.com/gODtECH-Ctl-Create/Ayo-Richard-ABE
+</details>
+
+## 🔗 Explore
+
+The live portfolio and individual project links are maintained in the site itself so the repository remains the technical source for the portfolio experience.
+
+## 🔐 Ownership
+
+This repository contains proprietary portfolio software, content, and project presentation materials. See [`LICENSE`](./LICENSE) for usage terms.
