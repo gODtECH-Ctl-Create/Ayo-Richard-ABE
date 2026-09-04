@@ -117,6 +117,20 @@ jobs:
               css.write_text(styles + '\n' + icons, encoding='utf-8')
           PY
 
+      - name: Inject project cards
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          page = Path('index.html')
+          html = page.read_text(encoding='utf-8')
+          tag = '<script src="project-additions.js"></script>'
+          if tag not in html:
+              html = html.replace('</body>', f'  {tag}\n</body>')
+          page.write_text(html, encoding='utf-8')
+          PY
+
       - name: Inject site interaction layer
         run: |
           python - <<'PY'
