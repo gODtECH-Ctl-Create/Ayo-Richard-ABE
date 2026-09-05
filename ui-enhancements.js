@@ -91,7 +91,6 @@
         top: .16em;
         border-top: 1.7px solid currentColor;
         border-right: 1.7px solid currentColor;
-        transform: rotate(0deg);
       }
 
       .ui-icon-left::before {
@@ -263,6 +262,168 @@
         animation: attentionPulse 2.2s ease-in-out infinite !important;
       }
 
+      .experience-section {
+        border-top: 1px solid var(--line);
+        background: rgba(255,255,255,.26);
+      }
+
+      .experience-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+        gap: 18px;
+      }
+
+      .experience-column,
+      .certification-panel {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,.52);
+      }
+
+      .experience-column {
+        padding: 10px 24px;
+      }
+
+      .experience-item {
+        display: grid;
+        grid-template-columns: 98px minmax(0,1fr);
+        gap: 24px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .experience-item:last-child {
+        border-bottom: 0;
+      }
+
+      .experience-meta {
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .experience-item h3 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        letter-spacing: -.04em;
+      }
+
+      .experience-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .experience-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 14px;
+      }
+
+      .experience-tags span {
+        padding: 6px 8px;
+        border: 1px solid rgba(17,17,15,.11);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      .certification-panel {
+        position: relative;
+        overflow: hidden;
+        padding: 28px;
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .certification-panel::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        right: -70px;
+        top: -70px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(183,255,60,.35), transparent 67%);
+        pointer-events: none;
+      }
+
+      .certification-panel .eyebrow {
+        color: rgba(255,255,255,.52);
+      }
+
+      .certification-panel h3 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        max-width: 420px;
+        font-size: 38px;
+        line-height: .98;
+        letter-spacing: -.055em;
+      }
+
+      .certification-intro {
+        position: relative;
+        z-index: 1;
+        margin: 18px 0 26px;
+        max-width: 430px;
+        color: rgba(255,255,255,.62);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .certification-placeholder {
+        position: relative;
+        z-index: 1;
+        padding: 16px;
+        border: 1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.05);
+      }
+
+      .certification-placeholder strong {
+        display: block;
+        margin-bottom: 5px;
+        font-family: "Space Grotesk", Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      .certification-placeholder span {
+        color: rgba(255,255,255,.48);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .certification-note {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        color: var(--accent);
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .certification-note::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: currentColor;
+        box-shadow: 0 0 0 4px rgba(183,255,60,.12);
+      }
+
+      .mobile-project-hint {
+        display: none;
+      }
+
       @media (max-width: 720px) {
         .nav-github {
           animation-duration: 2.2s !important;
@@ -276,14 +437,195 @@
         .button-secondary {
           animation-duration: 2.8s !important;
         }
+
+        .project-grid {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: stretch;
+          gap: 16px !important;
+          overflow-x: auto !important;
+          overflow-y: visible !important;
+          width: calc(100% + 40px) !important;
+          margin-inline: -20px !important;
+          padding: 6px 20px 22px !important;
+          scroll-snap-type: x mandatory;
+          overscroll-behavior-x: contain;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-x pan-y;
+          scrollbar-width: none;
+        }
+
+        .project-grid::-webkit-scrollbar {
+          display: none;
+        }
+
+        .project-card,
+        .project-card.featured,
+        .project-card.more-card {
+          flex: 0 0 min(86vw, 390px) !important;
+          width: min(86vw, 390px) !important;
+          min-width: 0 !important;
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+        }
+
+        .project-card.featured {
+          display: block !important;
+        }
+
+        .project-card:hover {
+          transform: none;
+        }
+
+        .mobile-project-hint {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 8px;
+          margin: -18px 0 24px;
+          color: var(--muted);
+          font-size: 8px;
+          font-weight: 800;
+          letter-spacing: .14em;
+          text-transform: uppercase;
+        }
+
+        .mobile-project-hint::after {
+          content: "";
+          width: 22px;
+          height: 1px;
+          background: currentColor;
+          box-shadow: 8px 0 0 currentColor;
+          animation: attentionPulse 1.8s ease-in-out infinite;
+        }
+
+        .experience-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .experience-column {
+          padding: 8px 20px;
+        }
+
+        .experience-item {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 22px 0;
+        }
+
+        .experience-item h3 {
+          font-size: 22px;
+        }
+
+        .certification-panel {
+          padding: 24px;
+        }
+
+        .certification-panel h3 {
+          font-size: 34px;
+        }
       }
     `;
     document.head.appendChild(style);
   };
 
+  const addExperienceNav = () => {
+    const nav = document.querySelector('.desktop-nav');
+    if (!nav || nav.querySelector('[data-experience-link]')) return;
+
+    const contact = nav.querySelector('a[href="#contact"]');
+    const link = document.createElement('a');
+    link.href = '#experience';
+    link.dataset.experienceLink = 'true';
+    link.textContent = 'CERT & EXP';
+
+    if (contact) nav.insertBefore(link, contact);
+    else nav.appendChild(link);
+  };
+
+  const addExperienceSection = () => {
+    if (document.querySelector('#experience')) return;
+
+    const about = document.querySelector('#about');
+    if (!about) return;
+
+    const section = document.createElement('section');
+    section.className = 'section experience-section';
+    section.id = 'experience';
+    section.innerHTML = `
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> CERTIFICATIONS & EXPERIENCE</p>
+            <h2>Where the <em>work</em> comes together.</h2>
+          </div>
+          <p>A growing record of the product, engineering, systems, and leadership work behind the projects on this site.</p>
+        </div>
+
+        <div class="experience-layout">
+          <div class="experience-column">
+            <article class="experience-item">
+              <div class="experience-meta">01 · Product</div>
+              <div>
+                <h3>Product Development & Management</h3>
+                <p>Working across product definition, user experience, requirements, delivery, and software implementation to turn real problems into useful products.</p>
+                <div class="experience-tags"><span>Product Strategy</span><span>Roadmaps</span><span>Delivery</span></div>
+              </div>
+            </article>
+            <article class="experience-item">
+              <div class="experience-meta">02 · Engineering</div>
+              <div>
+                <h3>Software & Systems Building</h3>
+                <p>Building web products, internal systems, automations, and developer-facing tools that reduce friction and make complex workflows easier to run.</p>
+                <div class="experience-tags"><span>Web Apps</span><span>Automation</span><span>Developer Systems</span></div>
+              </div>
+            </article>
+            <article class="experience-item">
+              <div class="experience-meta">03 · Leadership</div>
+              <div>
+                <h3>Product Operations & Collaboration</h3>
+                <p>Helping teams organize product work, connect technical decisions to user needs, and move from scattered ideas to a shippable system.</p>
+                <div class="experience-tags"><span>Product Operations</span><span>Collaboration</span><span>Systems Thinking</span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="certification-panel">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> CERTIFICATIONS</p>
+            <h3>A dedicated place for the credentials behind the work.</h3>
+            <p class="certification-intro">Certification names, issuing bodies, dates, and verification links can be added here as the portfolio grows.</p>
+            <div class="certification-placeholder">
+              <strong>Certification record</strong>
+              <span>Add your certification details and verification links here.</span>
+            </div>
+            <div class="certification-note">Ready for your certification list</div>
+          </aside>
+        </div>
+      </div>
+    `;
+
+    about.parentNode.insertBefore(section, about);
+  };
+
+  const addMobileProjectHint = () => {
+    if (document.querySelector('.mobile-project-hint')) return;
+
+    const work = document.querySelector('#work');
+    const grid = work?.querySelector('.project-grid');
+    if (!work || !grid) return;
+
+    const hint = document.createElement('div');
+    hint.className = 'mobile-project-hint';
+    hint.textContent = 'Swipe to explore projects';
+    grid.parentNode.insertBefore(hint, grid);
+  };
+
   const init = () => {
     replaceArrowText();
     injectInteractionStyles();
+    addExperienceNav();
+    addExperienceSection();
+    addMobileProjectHint();
   };
 
   if (document.readyState === 'loading') {
