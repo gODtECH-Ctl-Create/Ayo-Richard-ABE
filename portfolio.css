@@ -94,31 +94,9 @@
 }
 
 @media (max-width: 700px) {
-  .home-project-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: stretch;
-    gap: 16px !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    width: calc(100% + 28px) !important;
-    margin-left: -14px !important;
-    padding: 6px 14px 22px !important;
-    scroll-snap-type: x mandatory;
-    overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
+  .home-project-grid { display: flex !important; flex-direction: row !important; align-items: stretch; gap: 16px !important; overflow-x: auto !important; overflow-y: visible !important; width: calc(100% + 28px) !important; margin-left: -14px !important; padding: 6px 14px 22px !important; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .home-project-grid::-webkit-scrollbar { display: none; }
-  .home-project-grid .project-card,
-  .home-project-grid .project-card.featured,
-  .home-project-grid .more-project-card {
-    flex: 0 0 86vw !important;
-    width: 86vw !important;
-    min-width: 0 !important;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
+  .home-project-grid .project-card, .home-project-grid .project-card.featured, .home-project-grid .more-project-card { flex: 0 0 86vw !important; width: 86vw !important; min-width: 0 !important; scroll-snap-align: start; scroll-snap-stop: always; }
   .home-project-grid .project-card.featured { display: block; }
   .home-project-grid .more-project-card { min-height: 280px; padding: 28px; }
   .more-project-copy h3 { font-size: 34px; }
@@ -133,3 +111,5 @@
   .projects-category + .projects-category { margin-top: 82px; }
   .project-grid-all { grid-template-columns: 1fr; }
 }
+
+/* Keep the additions intentionally isolated from the original component styling. */
