@@ -36,15 +36,11 @@ jobs:
           page = Path('index.html')
           html = page.read_text(encoding='utf-8')
 
-          # Remove arrow-only spans from the source markup. The clean icons below
-          # are rendered with CSS so Safari cannot substitute emoji glyphs.
           html = html.replace('<span>↗</span>', '')
           html = html.replace('<span>↓</span>', '')
           html = html.replace('<span>↑</span>', '')
           html = html.replace('<span class="card-arrow">↗</span>', '<span class="card-arrow" aria-hidden="true"></span>')
 
-          # Defensive cleanup for any other Unicode arrow characters that may
-          # have been added to the page later.
           for arrow in ('↗', '↘', '↖', '↙', '→', '←', '↑', '↓', '↔', '↕'):
               html = html.replace(arrow, '')
 
@@ -138,6 +134,19 @@ jobs:
           path = Path('index.html')
           html = path.read_text(encoding='utf-8')
           tag = '<script src="ui-enhancements.js"></script>'
+          if tag not in html:
+              html = html.replace('</body>', f'  {tag}\n</body>')
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Inject project navigation and mobile rail fix
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          tag = '<script src="projects-ui-fix.js"></script>'
           if tag not in html:
               html = html.replace('</body>', f'  {tag}\n</body>')
           path.write_text(html, encoding='utf-8')
