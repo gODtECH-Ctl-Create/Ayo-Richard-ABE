@@ -1,0 +1,39 @@
+/* Small theme-specific corrections kept separate from motion and layout. */
+
+.theme-toggle .theme-icon-sun { display: block; }
+.theme-toggle .theme-icon-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-icon-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-icon-moon { display: block; }
+
+.contact-card > div:first-child > p:last-child {
+  color: var(--theme-muted);
+}
+
+html[data-theme="dark"] .desktop-nav a[href="projects.html"],
+html[data-theme="dark"] .desktop-nav a.is-active {
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] .project-tags span,
+html[data-theme="dark"] .experience-tags span {
+  color: rgba(244,245,237,.82);
+  border-color: var(--theme-line);
+}
+
+html[data-theme="dark"] .project-private {
+  color: var(--theme-muted);
+}
+
+html[data-theme="dark"] .projects-page .page-back,
+html[data-theme="dark"] .projects-page .projects-category-header h2,
+html[data-theme="dark"] .projects-page .projects-hero h1 {
+  color: var(--theme-text);
+}
+
+/* Decorative project mockups keep their own light-surface ink in dark mode. */
+html[data-theme="dark"] .visual-green .project-tags span,
+html[data-theme="dark"] .visual-light .project-tags span,
+html[data-theme="dark"] .visual-paper .project-tags span,
+html[data-theme="dark"] .visual-purple .project-tags span {
+  color: #11110f;
+}
