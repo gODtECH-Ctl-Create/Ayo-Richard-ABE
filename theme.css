@@ -1,0 +1,381 @@
+/* Theme layer: light/dark color system only.
+   Motion, project layout and the hero flip remain isolated in their own files. */
+
+:root {
+  color-scheme: light;
+  --theme-bg: #f5f5f2;
+  --theme-surface: rgba(255,255,255,.92);
+  --theme-surface-solid: #ffffff;
+  --theme-surface-soft: #eceee7;
+  --theme-text: #11110f;
+  --theme-muted: #686863;
+  --theme-line: rgba(17,17,15,.12);
+  --theme-line-strong: rgba(17,17,15,.22);
+  --theme-header: rgba(245,245,242,.88);
+  --theme-grid: rgba(17,17,15,.055);
+  --theme-shadow: 0 18px 44px rgba(17,17,15,.07);
+  --theme-card-shadow: 0 10px 32px rgba(17,17,15,.035);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-bg: #0c0d0b;
+  --theme-surface: rgba(24,25,22,.94);
+  --theme-surface-solid: #181916;
+  --theme-surface-soft: #20211d;
+  --theme-text: #f4f5ed;
+  --theme-muted: #a6a89f;
+  --theme-line: rgba(255,255,255,.11);
+  --theme-line-strong: rgba(255,255,255,.21);
+  --theme-header: rgba(12,13,11,.88);
+  --theme-grid: rgba(255,255,255,.055);
+  --theme-shadow: 0 18px 44px rgba(0,0,0,.30);
+  --theme-card-shadow: 0 10px 32px rgba(0,0,0,.22);
+  --portfolio-card-bg: rgba(24,25,22,.94);
+  --portfolio-charcoal: #171815;
+  --portfolio-charcoal-soft: #20211d;
+}
+
+body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--theme-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--theme-grid) 1px, transparent 1px);
+}
+
+.site-header {
+  border-bottom-color: var(--theme-line);
+  background: var(--theme-header);
+}
+
+.brand-name,
+.desktop-nav a,
+.page-back,
+.footer-wrap a {
+  color: var(--theme-text);
+}
+
+.desktop-nav {
+  color: var(--theme-muted);
+}
+
+.hero-lead,
+.hero-note,
+.section-heading > p,
+.projects-category-header > p,
+.projects-hero-copy > p:last-child,
+.experience-item p,
+.projects-footer-card p,
+.project-body p,
+.project-private,
+.footer-wrap {
+  color: var(--theme-muted);
+}
+
+.eyebrow,
+.project-index,
+.project-kind,
+.experience-meta {
+  color: var(--theme-muted);
+}
+
+/* Theme control */
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.theme-toggle {
+  width: 39px;
+  height: 39px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--theme-line-strong);
+  border-radius: 999px;
+  background: var(--theme-surface);
+  color: var(--theme-text);
+  box-shadow: 0 7px 18px rgba(17,17,15,.07);
+  cursor: pointer;
+  transition: background-color .22s ease, color .22s ease, border-color .22s ease, transform .2s ease, box-shadow .22s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(183,255,60,.75);
+  box-shadow: 0 0 0 3px rgba(183,255,60,.12), 0 10px 24px rgba(17,17,15,.10);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-icon-moon { display: none; }
+html[data-theme="dark"] .theme-icon-sun { display: none; }
+html[data-theme="dark"] .theme-icon-moon { display: block; }
+
+html[data-theme="dark"] .theme-toggle {
+  background: #171815;
+  color: var(--accent);
+  border-color: rgba(183,255,60,.28);
+  box-shadow: 0 0 0 3px rgba(183,255,60,.06), 0 8px 22px rgba(0,0,0,.28);
+}
+
+/* Project surfaces */
+.home-project-grid .project-card:not(.more-project-card),
+.project-grid-all .project-card,
+.experience-column,
+.projects-footer-card {
+  background: var(--theme-surface);
+  border-color: var(--theme-line);
+  box-shadow: var(--theme-card-shadow);
+}
+
+.home-project-grid .project-card:hover,
+.project-grid-all .project-card:hover {
+  border-color: var(--theme-line-strong);
+  box-shadow: var(--theme-shadow);
+}
+
+.project-tags span,
+.experience-tags span,
+.skill-list span {
+  border-color: var(--theme-line);
+}
+
+.project-status {
+  border-color: var(--theme-line);
+}
+
+.project-status.is-live {
+  background: rgba(183,255,60,.18);
+  border-color: rgba(183,255,60,.38);
+  color: #416d00;
+}
+
+html[data-theme="dark"] .project-status.is-live {
+  background: rgba(183,255,60,.12);
+  border-color: rgba(183,255,60,.34);
+  color: #c7ff6c;
+}
+
+.project-status.is-building {
+  background: rgba(17,17,15,.055);
+  color: #73736d;
+}
+
+html[data-theme="dark"] .project-status.is-building {
+  background: rgba(255,255,255,.055);
+  color: #a8aaa2;
+}
+
+html[data-theme="dark"] .project-link {
+  color: var(--theme-text);
+  background: linear-gradient(transparent 58%, rgba(183,255,60,.50) 58%);
+}
+
+html[data-theme="dark"] .project-link:hover {
+  color: #ffffff;
+  background: linear-gradient(transparent 48%, rgba(183,255,60,.78) 48%);
+}
+
+/* Keep project illustrations intentionally colorful instead of inverting them. */
+.visual-green,
+.visual-light,
+.visual-paper,
+.visual-purple,
+.mock-panel,
+.mail-console,
+.voice-console,
+.school-ui,
+.funnel div,
+.forge-flow span {
+  color: #11110f;
+}
+
+.visual-dark,
+.visual-dark .visual-label,
+.money-console {
+  color: #fff;
+}
+
+/* Sections */
+.experience-section {
+  border-top-color: var(--theme-line);
+  background: color-mix(in srgb, var(--theme-surface-solid) 24%, transparent);
+}
+
+html[data-theme="dark"] .experience-section {
+  background: rgba(255,255,255,.018);
+}
+
+html[data-theme="dark"] .experience-column {
+  background: rgba(24,25,22,.88);
+}
+
+html[data-theme="dark"] .certification-panel {
+  border-color: rgba(255,255,255,.10);
+  background: #171815;
+}
+
+/* The lime developer strip remains a brand moment in both themes. */
+.developer-strip,
+.developer-strip h2,
+.developer-strip .eyebrow,
+.developer-strip .text-link {
+  color: #11110f;
+}
+
+.developer-strip .text-link {
+  border-color: rgba(17,17,15,.16);
+  background: rgba(17,17,15,.08);
+}
+
+.developer-strip .text-link:hover {
+  background: #11110f;
+  color: var(--accent);
+}
+
+/* About intentionally stays charcoal in light mode and becomes an elevated dark surface in dark mode. */
+html[data-theme="dark"] #about .about-grid {
+  border-color: rgba(255,255,255,.10);
+  background: linear-gradient(145deg, #171815 0%, #20211d 100%);
+  box-shadow: 0 30px 85px rgba(0,0,0,.30);
+}
+
+.contact-card {
+  background: var(--theme-surface-soft);
+  border: 1px solid var(--theme-line);
+}
+
+.contact-card::after {
+  border-color: var(--theme-line);
+  box-shadow: 0 0 0 48px color-mix(in srgb, var(--theme-text) 3%, transparent), 0 0 0 96px color-mix(in srgb, var(--theme-text) 2%, transparent);
+}
+
+.site-footer {
+  border-top-color: var(--theme-line);
+  background: var(--theme-bg);
+}
+
+.projects-hero {
+  border-bottom-color: var(--theme-line);
+}
+
+.projects-footer {
+  border-top-color: var(--theme-line);
+}
+
+html[data-theme="dark"] .developer-category {
+  background: linear-gradient(145deg, #151612 0%, #1d1e1a 100%);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+html[data-theme="dark"] .developer-category .project-card {
+  background: rgba(26,27,24,.96);
+  color: var(--theme-text);
+  border-color: var(--theme-line);
+}
+
+html[data-theme="dark"] .developer-category .project-card .project-body p,
+html[data-theme="dark"] .developer-category .project-card .project-index,
+html[data-theme="dark"] .developer-category .project-card .project-kind {
+  color: var(--theme-muted);
+}
+
+/* CTA contrast changes with the canvas without touching the bounce animation. */
+html[data-theme="dark"] .button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #11110f;
+  box-shadow: 0 0 0 3px rgba(183,255,60,.10), 0 12px 28px rgba(0,0,0,.30);
+}
+
+html[data-theme="dark"] .button-secondary {
+  background: rgba(255,255,255,.075);
+  border-color: rgba(255,255,255,.16);
+  color: var(--theme-text);
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+}
+
+html[data-theme="dark"] .nav-github {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #11110f;
+  box-shadow: 0 0 0 3px rgba(183,255,60,.08), 0 8px 20px rgba(0,0,0,.24);
+}
+
+html[data-theme="dark"] .brand-mark {
+  border-color: rgba(255,255,255,.16);
+  background: #11110f;
+  box-shadow: 0 0 0 1px rgba(183,255,60,.08);
+}
+
+/* Floating brand icons remain colorful. Dark mode increases visibility and gives
+   dark logos such as GitHub/Next/Rust a subtle light edge without inverting colors. */
+html[data-theme="dark"] body::before {
+  opacity: .46;
+  filter: saturate(1.12) brightness(1.08) drop-shadow(0 0 2px rgba(255,255,255,.18));
+}
+
+html[data-theme="dark"] body::after {
+  opacity: .43;
+  filter: saturate(1.10) brightness(1.12) drop-shadow(0 0 2px rgba(255,255,255,.48)) drop-shadow(0 0 7px rgba(183,255,60,.08));
+}
+
+/* Smooth palette changes only; transform/animation properties are intentionally untouched. */
+body,
+.site-header,
+.project-card,
+.experience-column,
+.projects-footer-card,
+.contact-card,
+.site-footer,
+.theme-toggle,
+.button-primary,
+.button-secondary,
+.nav-github {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: .26s;
+  transition-timing-function: ease;
+}
+
+@media (max-width: 700px) {
+  .nav-actions { gap: 7px; }
+  .theme-toggle { width: 36px; height: 36px; }
+  .nav-github { padding: 7px 10px; font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .site-header,
+  .project-card,
+  .experience-column,
+  .projects-footer-card,
+  .contact-card,
+  .site-footer,
+  .theme-toggle,
+  .button-primary,
+  .button-secondary,
+  .nav-github {
+    transition: none !important;
+  }
+}
