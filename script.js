@@ -34,38 +34,44 @@ const initProfileFlip = () => {
   card.tabIndex = 0;
   card.setAttribute('role', 'button');
   card.setAttribute('aria-pressed', 'false');
-  card.setAttribute('aria-label', 'Ayo Richard Abe profile card. Click or press Enter to flip.');
+  card.setAttribute('aria-label', 'Profile card that flips between GitHub profile and personal profile');
 
-  const hint = document.createElement('span');
-  hint.className = 'flip-hint';
-  hint.textContent = 'click to flip ↻';
-  hint.setAttribute('aria-hidden', 'true');
-  card.appendChild(hint);
-
+  // Restore the original September profile face rather than recreating it with new content.
   const back = document.createElement('div');
   back.className = 'hero-card-backface';
   back.setAttribute('aria-hidden', 'true');
   back.innerHTML = `
     <div class="flip-back-top">
       <span class="micro-label">02 / PROFILE</span>
-      <span class="micro-label">gODtECH · NG</span>
+      <span class="micro-label">ABOUT ME</span>
     </div>
-    <div class="flip-back-center">
-      <div>
-        <img src="https://avatars.githubusercontent.com/u/203571096?v=4" alt="" class="flip-back-photo" />
-        <h3>Ayo Richard Abe</h3>
-        <p>Product Developer · Product Manager · Systems Builder</p>
-        <div class="flip-back-tags">
-          <span>PRODUCT</span><span>ENGINEERING</span><span>SYSTEMS</span><span>AI</span>
-        </div>
+    <div class="flip-back-photo-wrap">
+      <img src="./assets/gODtECH.png?v=20260903" alt="Ayo Richard Abe" class="flip-back-photo" />
+      <div class="flip-back-fallback" aria-hidden="true">AR</div>
+    </div>
+    <div class="flip-back-content">
+      <p class="micro-label">Ayo Richard Abe</p>
+      <h3>Ayo Richard Abe</h3>
+      <p>Product Developer · Product Manager · Systems Builder</p>
+      <div class="flip-back-tags">
+        <span>PRODUCT</span><span>TECH</span><span>SYSTEMS</span>
       </div>
     </div>
     <div class="flip-back-footer">
+      <span>gODtECH</span>
       <span>BUILD · SHIP · IMPROVE</span>
-      <span>↻ FLIP BACK</span>
     </div>
   `;
   card.appendChild(back);
+
+  const photo = back.querySelector('.flip-back-photo');
+  const fallback = back.querySelector('.flip-back-fallback');
+  if (photo && fallback) {
+    photo.addEventListener('error', () => {
+      photo.style.display = 'none';
+      fallback.style.display = 'grid';
+    });
+  }
 
   let flipped = false;
   let timerId = null;
@@ -88,7 +94,7 @@ const initProfileFlip = () => {
   const startAutoFlip = () => {
     stopAutoFlip();
     if (reducedMotion || document.hidden) return;
-    timerId = window.setInterval(toggleFlip, 3600);
+    timerId = window.setInterval(toggleFlip, 3000);
   };
 
   const activateFlip = () => {
@@ -97,6 +103,7 @@ const initProfileFlip = () => {
     startAutoFlip();
   };
 
+  // Let the original entrance animation finish, then hand transform control to the flip.
   window.setTimeout(activateFlip, 950);
 
   card.addEventListener('click', () => {
