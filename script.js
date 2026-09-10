@@ -34,11 +34,19 @@ const initProfileFlip = () => {
   card.tabIndex = 0;
   card.setAttribute('role', 'button');
   card.setAttribute('aria-pressed', 'false');
-  card.setAttribute('aria-label', 'Profile card that flips between GitHub profile and personal profile');
+  card.setAttribute('aria-label', 'Profile card that flips between the portfolio profile and Ayo Richard Abe personal profile');
 
-  // Restore the original September profile face rather than recreating it with new content.
+  // Restore the original September implementation: the current hero content is
+  // the front face, while the personal portrait/name card is the back face.
+  const front = document.createElement('div');
+  front.className = 'hero-card-face hero-card-front';
+
+  while (card.firstChild) {
+    front.appendChild(card.firstChild);
+  }
+
   const back = document.createElement('div');
-  back.className = 'hero-card-backface';
+  back.className = 'hero-card-face hero-card-back';
   back.setAttribute('aria-hidden', 'true');
   back.innerHTML = `
     <div class="flip-back-top">
@@ -62,14 +70,24 @@ const initProfileFlip = () => {
       <span>BUILD · SHIP · IMPROVE</span>
     </div>
   `;
-  card.appendChild(back);
+
+  const inner = document.createElement('div');
+  inner.className = 'hero-card-inner';
+  inner.append(front, back);
+  card.appendChild(inner);
 
   const photo = back.querySelector('.flip-back-photo');
   const fallback = back.querySelector('.flip-back-fallback');
   if (photo && fallback) {
+    fallback.style.display = 'none';
     photo.addEventListener('error', () => {
-      photo.style.display = 'none';
-      fallback.style.display = 'grid';
+      if (photo.dataset.fallbackTried === 'true') {
+        photo.style.display = 'none';
+        fallback.style.display = 'grid';
+        return;
+      }
+      photo.dataset.fallbackTried = 'true';
+      photo.src = 'https://raw.githubusercontent.com/gODtECH-Ctl-Create/Ayo-Richard-ABE/main/assets/gODtECH.png';
     });
   }
 
@@ -81,6 +99,7 @@ const initProfileFlip = () => {
     flipped = next;
     card.classList.toggle('is-flipped', flipped);
     card.setAttribute('aria-pressed', String(flipped));
+    front.setAttribute('aria-hidden', String(flipped));
     back.setAttribute('aria-hidden', String(!flipped));
   };
 
@@ -103,7 +122,7 @@ const initProfileFlip = () => {
     startAutoFlip();
   };
 
-  // Let the original entrance animation finish, then hand transform control to the flip.
+  // Keep the existing entrance reveal, then start the original flip behavior.
   window.setTimeout(activateFlip, 950);
 
   card.addEventListener('click', () => {
