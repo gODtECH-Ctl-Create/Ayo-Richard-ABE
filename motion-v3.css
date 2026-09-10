@@ -1,6 +1,6 @@
 /* Motion layer v3: real stack logos, stronger CTAs, and safe profile-card flipping. */
 
-/* Replace the previous text-based watermark with actual technology logos. */
+/* Real technology logos floating behind the portfolio. */
 body::before,
 body::after {
   content: "";
@@ -113,6 +113,19 @@ body > footer {
   z-index: 1;
 }
 
+/* Softer project cards without changing the dense laptop layout. */
+.project-card {
+  border-radius: 22px;
+}
+
+.project-visual {
+  border-radius: 15px;
+}
+
+.more-project-card {
+  border-radius: 22px;
+}
+
 /* CTA system: thin edges, darker emphasis, heavier wording and a recurring nudge. */
 .button,
 .project-link,
@@ -127,6 +140,11 @@ body > footer {
 .text-link,
 .nav-github {
   animation: ctaInvite 2.9s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+.button,
+.text-link,
+.nav-github {
   box-shadow: 0 9px 22px rgba(17,17,15,.10);
 }
 
@@ -149,7 +167,19 @@ body > footer {
   box-shadow: 0 8px 20px rgba(17,17,15,.08);
 }
 
-.project-link,
+/* Project CTAs stay as text links: highlighted, bold and animated, not pill buttons. */
+.project-link {
+  width: max-content;
+  max-width: 100%;
+  padding: 0 1px 2px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(transparent 58%, rgba(183,255,60,.62) 58%);
+  box-shadow: none;
+  color: #11110f;
+  line-height: 1.25;
+}
+
 .text-link {
   width: max-content;
   max-width: 100%;
@@ -177,7 +207,12 @@ body > footer {
   transform: translateY(-3px) scale(1.015);
 }
 
-.project-link:hover,
+.project-link:hover {
+  border: 0;
+  background: linear-gradient(transparent 48%, rgba(183,255,60,.92) 48%);
+  color: #090908;
+}
+
 .text-link:hover,
 .nav-github:hover {
   background: #11110f;
@@ -193,8 +228,7 @@ body > footer {
   92% { transform: translateY(0); }
 }
 
-/* Safe profile flip: the existing front remains untouched; JS only adds a back face
-   and toggles this class. No fixed runtime heights and no DOM reconstruction. */
+/* Safe flip shell. The second face below deliberately matches the original September card. */
 .hero-grid { perspective: 1400px; }
 
 .hero-card.flip-ready {
@@ -224,24 +258,11 @@ body > footer {
   flex-direction: column;
   padding: 24px;
   overflow: hidden;
+  border: 1px solid var(--ink);
   border-radius: inherit;
-  background:
-    radial-gradient(circle at 78% 16%, rgba(255,255,255,.54), transparent 28%),
-    linear-gradient(145deg, #b7ff3c 0%, #d7ff8d 55%, #efffd4 100%);
+  background: var(--accent);
   color: var(--ink);
   transform: rotateY(180deg);
-}
-
-.hero-card-backface::after {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  left: -90px;
-  bottom: -120px;
-  border: 1px solid rgba(17,17,15,.11);
-  border-radius: 50%;
-  box-shadow: 0 0 0 46px rgba(17,17,15,.035), 0 0 0 92px rgba(17,17,15,.025);
 }
 
 .flip-back-top,
@@ -254,91 +275,139 @@ body > footer {
   gap: 12px;
 }
 
-.hero-card-backface .micro-label { color: rgba(17,17,15,.52); }
+.hero-card-backface .micro-label {
+  color: rgba(17,17,15,.48);
+}
 
-.flip-back-center {
+.flip-back-photo-wrap {
   position: relative;
   z-index: 2;
   display: grid;
   place-items: center;
-  flex: 1;
-  text-align: center;
+  width: 190px;
+  height: 190px;
+  margin: 38px auto 26px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(17,17,15,.2);
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  box-shadow: 0 18px 48px rgba(17,17,15,.14);
+}
+
+.flip-back-photo,
+.flip-back-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .flip-back-photo {
-  width: 136px;
-  height: 136px;
-  margin-bottom: 18px;
+  display: block;
   object-fit: cover;
-  border: 6px solid #11110f;
-  border-radius: 50%;
-  box-shadow: 0 18px 42px rgba(17,17,15,.16);
 }
 
-.flip-back-center h3 {
-  margin: 0;
+.flip-back-fallback {
+  display: none;
+  place-items: center;
+  background: var(--ink);
+  color: var(--accent);
   font-family: "Space Grotesk", Arial, sans-serif;
-  font-size: clamp(31px, 4vw, 44px);
-  line-height: .93;
+  font-size: 48px;
+  font-weight: 700;
   letter-spacing: -.06em;
 }
 
-.flip-back-center p {
+.flip-back-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.flip-back-content h3 {
+  margin: 6px 0 10px;
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: .96;
+  letter-spacing: -.06em;
+}
+
+.flip-back-content > p:last-of-type {
   max-width: 310px;
-  margin: 12px auto 0;
+  margin: 0 auto;
   color: rgba(17,17,15,.66);
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .flip-back-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
-  margin-top: 16px;
+  gap: 7px;
+  margin-top: 18px;
 }
 
 .flip-back-tags span {
   padding: 6px 8px;
-  border: 1px solid rgba(17,17,15,.15);
-  background: rgba(255,255,255,.30);
-  font-size: 7px;
+  border: 1px solid rgba(17,17,15,.14);
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: .09em;
+  letter-spacing: .08em;
 }
 
 .flip-back-footer {
-  padding-top: 17px;
-  border-top: 1px solid rgba(17,17,15,.15);
-  font-size: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17,17,15,.16);
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: .11em;
-}
-
-.flip-hint {
-  position: absolute;
-  right: 22px;
-  top: 52px;
-  z-index: 6;
-  padding: 5px 8px;
-  border: 1px solid rgba(255,255,255,.13);
-  border-radius: 999px;
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.58);
-  font-size: 7px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  letter-spacing: .12em;
 }
 
 @media (max-width: 700px) {
-  body::before { opacity: .27; background-size: 34px 34px, 32px 32px, 40px 40px, 38px 38px, 35px 35px, 34px 34px, 42px 42px, 34px 34px; }
-  body::after { opacity: .22; background-size: 33px 33px, 36px 36px, 34px 34px, 34px 34px, 31px 31px, 31px 31px, 30px 30px, 38px 38px; }
-  .flip-back-photo { width: 112px; height: 112px; margin-bottom: 14px; }
-  .flip-back-center h3 { font-size: 31px; }
-  .flip-back-center p { font-size: 11px; }
-  .flip-hint { top: 46px; right: 18px; }
+  body::before {
+    opacity: .27;
+    background-size: 34px 34px, 32px 32px, 40px 40px, 38px 38px, 35px 35px, 34px 34px, 42px 42px, 34px 34px;
+  }
+
+  body::after {
+    opacity: .22;
+    background-size: 33px 33px, 36px 36px, 34px 34px, 34px 34px, 31px 31px, 31px 31px, 30px 30px, 38px 38px;
+  }
+
+  .project-card,
+  .more-project-card {
+    border-radius: 18px;
+  }
+
+  .project-visual {
+    border-radius: 13px;
+  }
+
+  .hero-card-backface {
+    padding: 20px;
+  }
+
+  .flip-back-photo-wrap {
+    width: 150px;
+    height: 150px;
+    margin: 28px auto 22px;
+  }
+
+  .flip-back-content h3 {
+    font-size: 31px;
+  }
+
+  .flip-back-content > p:last-of-type {
+    max-width: 280px;
+    font-size: 12px;
+  }
+
+  .flip-back-tags {
+    margin-top: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -347,6 +416,11 @@ body > footer {
   .button,
   .project-link,
   .text-link,
-  .nav-github { animation: none !important; }
-  .hero-card.flip-ready { transition: none; }
+  .nav-github {
+    animation: none !important;
+  }
+
+  .hero-card.flip-ready {
+    transition: none;
+  }
 }
