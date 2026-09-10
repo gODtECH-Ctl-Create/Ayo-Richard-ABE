@@ -1,0 +1,111 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171713"/>
+      <stop offset="1" stop-color="#242420"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#11110F" flood-opacity="0.09"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="#F5F5F2"/>
+
+  <g font-family="Arial, sans-serif" font-weight="700" fill="#11110F" opacity="0.055">
+    <text x="55" y="112" font-size="28">JS</text><text x="305" y="84" font-size="26">&lt;/&gt;</text>
+    <text x="610" y="118" font-size="28">TS</text><text x="1120" y="98" font-size="26">{ }</text>
+    <text x="130" y="410" font-size="22">NODE</text><text x="585" y="380" font-size="22">SQL</text>
+    <text x="1160" y="438" font-size="22">API</text><text x="75" y="760" font-size="22">GIT</text>
+    <text x="585" y="795" font-size="21">DOCKER</text><text x="1190" y="760" font-size="22">AWS</text>
+  </g>
+
+  <g opacity="0.65">
+    <circle cx="230" cy="168" r="4" fill="#B7FF3C"/><circle cx="1000" cy="260" r="4" fill="#B7FF3C"/>
+    <circle cx="1240" cy="610" r="3" fill="#B7FF3C"/><circle cx="430" cy="690" r="3" fill="#B7FF3C"/>
+  </g>
+
+  <rect x="46" y="28" width="1348" height="56" rx="14" fill="#F5F5F2" stroke="#11110F" stroke-opacity="0.08"/>
+  <rect x="68" y="39" width="34" height="34" rx="9" fill="#11110F"/>
+  <text x="77" y="61" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B7FF3C">AR</text>
+  <text x="116" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#11110F">gODtECH</text>
+  <g font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#686863">
+    <text x="1030" y="62">WORK</text><text x="1088" y="62">PROJECTS</text><text x="1170" y="62">ABOUT</text><text x="1235" y="62">CONTACT</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="74" y="120" width="760" height="258" rx="24" fill="#FFFFFF" fill-opacity="0.92" stroke="#11110F" stroke-opacity="0.09"/>
+    <text x="112" y="166" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#686863">PRODUCT × ENGINEERING × SYSTEMS</text>
+    <text x="112" y="224" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#11110F">I build products that make</text>
+    <text x="112" y="276" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#11110F">difficult work feel <tspan fill="#8EEA00">simpler.</tspan></text>
+    <text x="112" y="318" font-family="Arial, sans-serif" font-size="14" fill="#686863">Product management, developer systems, AI-assisted engineering and practical software.</text>
+    <rect x="112" y="338" width="132" height="26" rx="4" fill="#11110F"/><text x="132" y="356" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="white">SELECTED WORK</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="858" y="120" width="508" height="258" rx="24" fill="url(#cardGlow)"/>
+    <text x="890" y="158" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="white" opacity="0.45">01 / PROFILE</text>
+    <circle cx="1112" cy="238" r="76" stroke="#B7FF3C" stroke-opacity="0.36"/>
+    <ellipse cx="1112" cy="238" rx="118" ry="62" transform="rotate(25 1112 238)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <circle cx="1112" cy="238" r="48" fill="#11110F" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="6"/>
+    <text x="1086" y="247" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#B7FF3C">AR</text>
+    <rect x="940" y="205" width="68" height="24" rx="12" fill="#11110F" stroke="#FFFFFF" stroke-opacity="0.16"/><text x="954" y="221" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="white">PRODUCT</text>
+    <rect x="1215" y="192" width="54" height="24" rx="12" fill="#11110F" stroke="#FFFFFF" stroke-opacity="0.16"/><text x="1228" y="208" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#B7FF3C">TECH</text>
+    <text x="890" y="346" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white">Ayo Richard Abe · gODtECH</text>
+  </g>
+
+  <text x="74" y="432" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#686863">SELECTED WORK · LIVE + BUILDING</text>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(74 454)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#B7FF3C"/>
+      <text x="28" y="41" font-size="8" font-weight="700" fill="#11110F">PROQUREMENT</text><text x="28" y="66" font-size="15" font-weight="700" fill="#11110F">Supplier discovery → source smarter</text>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">Proqurement</text><rect x="310" y="96" width="70" height="20" rx="10" fill="#E9FFD0"/><text x="328" y="110" font-size="7" font-weight="700" fill="#416D00">● LIVE</text>
+      <text x="16" y="135" font-size="10" fill="#686863">Construction · Procurement</text>
+    </g>
+
+    <g transform="translate(516 454)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#191916"/>
+      <text x="28" y="40" font-size="8" font-weight="700" fill="#B7FF3C">$ stackpilot new api</text><text x="28" y="61" font-size="9" fill="white" opacity="0.56">golden path · docker · ci · terraform</text>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">StackPilot</text><rect x="302" y="96" width="78" height="20" rx="10" fill="#F0F0ED"/><text x="315" y="110" font-size="7" font-weight="700" fill="#686863">● BUILDING</text>
+      <text x="16" y="135" font-size="10" fill="#686863">Developer Tool · Rust</text>
+    </g>
+
+    <g transform="translate(958 454)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#D9D1FF"/>
+      <text x="28" y="40" font-size="8" font-weight="700" fill="#11110F">gODtECH FORGE</text><text x="28" y="62" font-size="9" font-weight="700" fill="#11110F">REASON → DESIGN → BUILD → VERIFY → SHIP</text>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">gODtECH FORGE</text><rect x="302" y="96" width="78" height="20" rx="10" fill="#F0F0ED"/><text x="315" y="110" font-size="7" font-weight="700" fill="#686863">● BUILDING</text>
+      <text x="16" y="135" font-size="10" fill="#686863">AI-assisted Engineering</text>
+    </g>
+
+    <g transform="translate(74 626)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#191916"/><path d="M40 67L94 42L152 58L218 31L285 50L362 34" stroke="#B7FF3C" stroke-width="3" fill="none"/>
+      <text x="28" y="35" font-size="8" font-weight="700" fill="white">SNARE</text>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">Snare</text><rect x="310" y="96" width="70" height="20" rx="10" fill="#E9FFD0"/><text x="328" y="110" font-size="7" font-weight="700" fill="#416D00">● LIVE</text>
+      <text x="16" y="135" font-size="10" fill="#686863">Security · Developer Tool</text>
+    </g>
+
+    <g transform="translate(516 626)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#D9D1FF"/><rect x="54" y="30" width="92" height="40" rx="7" fill="white" fill-opacity="0.7"/><rect x="158" y="26" width="92" height="44" rx="7" fill="#11110F"/><rect x="262" y="34" width="92" height="36" rx="7" fill="white" fill-opacity="0.7"/>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">OHealth+</text><rect x="310" y="96" width="70" height="20" rx="10" fill="#E9FFD0"/><text x="328" y="110" font-size="7" font-weight="700" fill="#416D00">● LIVE</text>
+      <text x="16" y="135" font-size="10" fill="#686863">Health Technology · Platform</text>
+    </g>
+
+    <g transform="translate(958 626)">
+      <rect width="408" height="154" rx="16" fill="#FFFFFF" fill-opacity="0.94" stroke="#11110F" stroke-opacity="0.09"/>
+      <rect x="16" y="16" width="376" height="66" rx="11" fill="#E9EBE3"/><text x="28" y="39" font-size="8" font-weight="700" fill="#11110F">ABEMAIL MAIL</text><text x="28" y="61" font-size="9" fill="#686863">domain → delivery → receive → mailbox</text>
+      <text x="16" y="111" font-size="18" font-weight="700" fill="#11110F">ABEmail Mail</text><rect x="310" y="96" width="70" height="20" rx="10" fill="#E9FFD0"/><text x="328" y="110" font-size="7" font-weight="700" fill="#416D00">● LIVE</text>
+      <text x="16" y="135" font-size="10" fill="#686863">Email · Infrastructure</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="74" y="814" width="1292" height="58" rx="18" fill="#181815"/>
+    <circle cx="104" cy="843" r="5" fill="#B7FF3C"/><text x="122" y="847" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">ABOUT · I don't just ask what to build. I ask why it should exist.</text>
+    <text x="1110" y="847" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B7FF3C">PRODUCT / SYSTEMS / BUILD</text>
+  </g>
+</svg>
