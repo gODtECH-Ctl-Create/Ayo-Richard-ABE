@@ -18,9 +18,9 @@
 <p>
   <a href="https://godtech-ctl-create.github.io/Ayo-Richard-ABE/">Live portfolio</a> ·
   <a href="#-selected-work">Selected work</a> ·
+  <a href="#-for-developers">For developers</a> ·
   <a href="#-how-i-work">How I work</a> ·
-  <a href="#-core-toolkit">Toolkit</a> ·
-  <a href="#-site-architecture">Architecture</a>
+  <a href="#-core-toolkit">Toolkit</a>
 </p>
 
 </div>
@@ -45,7 +45,7 @@ WORKING SYSTEM
 SHIP → LEARN → IMPROVE
 ```
 
-The portfolio brings together selected products, internal systems, experiments, collaborations, and the thinking behind them.
+The portfolio brings together live products, active builds, internal systems, developer tools, infrastructure experiments, and the thinking behind them.
 
 <a href="#readme-top">↑ back to top</a>
 
@@ -55,16 +55,36 @@ The portfolio brings together selected products, internal systems, experiments, 
 
 A few projects that best represent the range of problems I work on:
 
-| Project | Area | What it explores |
-| --- | --- | --- |
-| **[Proqurement](https://proqurement.onrender.com/)** | Construction · Procurement | Supplier discovery, comparison, sourcing, and market intelligence |
-| **[SAYRR](https://github.com/gODtECH-Ctl-Create/SAYRR)** | Voice · Developer Tool | Voice-first text input and low-friction desktop interaction |
-| **[MortgageOps](https://github.com/gODtECH-Ctl-Create/MortgageOps)** | Finance · Operations | Mortgage case management, underwriting, servicing, risk, and operational control |
-| **[TechTrack](https://github.com/gODtECH-Ctl-Create/techtrack-chi)** | Education · Career | Learning, bootcamps, internships, cohorts, progress, and certificates |
-| **[OHealth+](https://github.com/gODtECH-Ctl-Create/Ohealth-be)** | Health Technology | Patient access, bookings, professional workflows, APIs, and dashboards |
-| **[ABEmail Mail](https://github.com/gODtECH-Ctl-Create/ABEmail-Mail)** | Email · Infrastructure | Organization-owned business email, delivery, receiving, and operations |
+| Project | State | Area | What it explores |
+| --- | --- | --- | --- |
+| **[Proqurement](https://proqurement.onrender.com/)** | 🟢 Live | Construction · Procurement | Supplier discovery, comparison, sourcing, and market intelligence |
+| **[StackPilot](https://github.com/gODtECH-Ctl-Create/StackPilot)** | 🟡 Building | Developer Tool · Rust | Opinionated project scaffolding and production-minded golden paths |
+| **[gODtECH FORGE](https://github.com/gODtECH-Ctl-Create/gODtECH-FORGE)** | 🟡 Building | AI · Engineering | Orchestrated reasoning, governance, engineering, verification, and AI-assisted development |
+| **[Snare](https://avioflagos.github.io/snare/)** | 🟢 Live | Security · Developer Tool | Software supply-chain scanning for malicious repository payloads |
+| **[OHealth+](https://github.com/gODtECH-Ctl-Create/Ohealth-be)** | 🟢 Live | Health Technology | Patient access, bookings, professional workflows, APIs, and dashboards |
+| **[ABEmail Mail](https://github.com/gODtECH-Ctl-Create/ABEmail-Mail)** | 🟢 Live | Email · Infrastructure | Organization-owned business email, delivery, receiving, and operations |
+| **[SAYRR](https://github.com/gODtECH-Ctl-Create/SAYRR)** | 🟡 Building | Voice · Product | Voice-first text input and low-friction desktop interaction |
+| **[MortgageOps](https://github.com/gODtECH-Ctl-Create/MortgageOps)** | 🟡 Building | Finance · Operations | Mortgage case management, underwriting, servicing, risk, and operational control |
+| **TechTrack** | 🟡 Building | Education · Career | Learning, bootcamps, internships, cohorts, progress, and certificates |
 
-The wider portfolio also includes **ABE TechLab**, **ABE TechLab Operations**, **Waste2Light**, **Snare**, school-management systems, recruitment intelligence, automation experiments, and developer-focused tooling.
+The wider catalogue also includes **Cyfamod SMS, Vettika, NanoClick, Lead Engine, Waste2Light, ABE TechLab Operations, ABE TechLab, Waste2Work, Cloud Infrastructure Platform, and Lucid**.
+
+---
+
+## 🧑‍💻 For developers
+
+A growing part of the portfolio is focused specifically on reducing friction for developers and technical teams.
+
+```text
+STACKPILOT  →  scaffold production-minded repositories
+FORGE       →  structure AI-assisted product + engineering work
+SNARE       →  inspect software-supply-chain risk
+CLOUD LAB   →  explore infrastructure foundations
+ABEMAIL     →  build around managed email infrastructure
+OPS         →  organize technical and AI-assisted operations
+```
+
+The website now has a dedicated **For Developers** section so these tools are easier to find without mixing them into every product category.
 
 ---
 
@@ -158,12 +178,12 @@ THINK → DEFINE → DESIGN → BUILD → TEST → SHIP → ITERATE
 ## 🎨 Portfolio experience
 
 <div align="center">
-  <img src="./assets/FireShot%20Capture%20074%20-%20Ayo%20Richard%20Abe%20-%20gODtECH%20-%20%5Bgodtech-ctl-create.github.io%5D.png" alt="Ayo Richard Abe portfolio preview" width="100%" />
+  <img src="./assets/portfolio-preview.svg" alt="Updated Ayo Richard Abe portfolio preview with compact projects, project states, developer tooling and charcoal About card" width="100%" />
 </div>
 
-The portfolio uses a deliberately minimal visual system: **off-white, black, grid structure, oversized typography, and the `#b7ff3c` gODtECH accent**.
+The portfolio uses a deliberately minimal visual system: **off-white, charcoal, grid structure, oversized typography, faint floating technology watermarks, and the `#b7ff3c` gODtECH accent**.
 
-The site itself contains the deeper project catalogue, project links, experience, services, and contact surfaces.
+Project cards now show their current **Live** or **Building** state, use a denser laptop-friendly layout, and separate developer-focused tools from the wider product catalogue.
 
 ---
 
@@ -174,15 +194,16 @@ This portfolio intentionally stays lightweight. It is a static site built with *
 ```text
 Ayo-Richard-ABE/
 │
-├── index.html           # main portfolio
-├── projects.html        # wider project catalogue
-├── styles.css           # core visual system
-├── portfolio.css        # portfolio-specific styling
-├── script.js            # interactions
-├── assets/              # project imagery and visual assets
+├── index.html              # main portfolio
+├── projects.html           # wider project catalogue + developer section
+├── styles.css              # core visual system
+├── portfolio.css           # original portfolio additions
+├── portfolio-v2.css        # compact cards, states, watermarks and new visual layer
+├── script.js               # lightweight interactions
+├── assets/                 # project imagery and README visuals
 └── .github/
     └── workflows/
-        └── pages.yml    # GitHub Pages deployment
+        └── pages.yml       # GitHub Pages deployment
 ```
 
 ```mermaid
@@ -198,7 +219,7 @@ graph LR
     F --> G[GitHub Pages]
 ```
 
-No frontend framework or build pipeline is required to render the portfolio.
+No frontend framework or application runtime is required to render the portfolio.
 
 ---
 
