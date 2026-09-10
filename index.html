@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#11110f" />
+    <meta name="theme-color" content="#f5f5f2" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="description" content="Ayo Richard Abe is a Product Manager, Product Builder, and Systems Thinker building useful software, product systems, and practical technology." />
     <meta property="og:title" content="Ayo Richard Abe | Product Manager · Product Builder · Systems Thinker" />
     <meta property="og:description" content="I turn ideas into products, internal systems, and practical technology." />
     <meta property="og:type" content="website" />
     <title>Ayo Richard Abe | gODtECH</title>
+    <script>
+      (() => {
+        const key = 'portfolio-theme';
+        let saved = null;
+        try { saved = localStorage.getItem(key); } catch (_) {}
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -30,7 +42,13 @@
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="nav-github" href="https://github.com/gODtECH-Ctl-Create" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path></svg>
+          </button>
+          <a class="nav-github" href="https://github.com/gODtECH-Ctl-Create" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        </div>
       </div>
     </header>
 
@@ -143,6 +161,7 @@
     </main>
 
     <footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Ayo Richard Abe · gODtECH</span><span>Build something useful. Make it matter.</span><a href="#top">Back to top ↑</a></div></footer>
+    <script src="theme.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
