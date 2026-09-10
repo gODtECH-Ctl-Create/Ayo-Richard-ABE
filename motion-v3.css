@@ -1,0 +1,352 @@
+/* Motion layer v3: real stack logos, stronger CTAs, and safe profile-card flipping. */
+
+/* Replace the previous text-based watermark with actual technology logos. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  will-change: background-position;
+}
+
+body::before {
+  opacity: .34;
+  background-image:
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg");
+  background-size:
+    46px 46px,
+    42px 42px,
+    54px 54px,
+    52px 52px,
+    48px 48px,
+    45px 45px,
+    58px 58px,
+    45px 45px;
+  background-position:
+    5% 15%,
+    21% 36%,
+    44% 12%,
+    68% 33%,
+    87% 14%,
+    12% 72%,
+    52% 78%,
+    90% 68%;
+  animation: techLogoFloatA 6.4s ease-in-out infinite alternate;
+}
+
+body::after {
+  opacity: .28;
+  background-image:
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"),
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg");
+  background-size:
+    44px 44px,
+    48px 48px,
+    46px 46px,
+    46px 46px,
+    42px 42px,
+    42px 42px,
+    40px 40px,
+    52px 52px;
+  background-position:
+    31% 18%,
+    76% 17%,
+    35% 58%,
+    74% 61%,
+    6% 48%,
+    94% 42%,
+    25% 88%,
+    78% 89%;
+  animation: techLogoFloatB 8.1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes techLogoFloatA {
+  0% {
+    background-position:
+      5% 17%, 21% 38%, 44% 14%, 68% 35%, 87% 16%, 12% 74%, 52% 80%, 90% 70%;
+  }
+  50% {
+    background-position:
+      6% 11%, 20% 31%, 46% 8%, 67% 27%, 88% 10%, 13% 67%, 51% 72%, 89% 62%;
+  }
+  100% {
+    background-position:
+      4% 14%, 22% 34%, 43% 10%, 69% 31%, 86% 12%, 11% 70%, 53% 76%, 91% 65%;
+  }
+}
+
+@keyframes techLogoFloatB {
+  0% {
+    background-position:
+      31% 20%, 76% 19%, 35% 60%, 74% 63%, 6% 50%, 94% 44%, 25% 90%, 78% 91%;
+  }
+  50% {
+    background-position:
+      30% 13%, 77% 11%, 34% 52%, 75% 54%, 7% 42%, 93% 35%, 26% 82%, 77% 82%;
+  }
+  100% {
+    background-position:
+      32% 17%, 75% 15%, 36% 56%, 73% 58%, 5% 46%, 95% 39%, 24% 86%, 79% 86%;
+  }
+}
+
+body > header,
+body > main,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA system: thin edges, darker emphasis, heavier wording and a recurring nudge. */
+.button,
+.project-link,
+.text-link,
+.nav-github,
+.page-back {
+  font-weight: 800;
+}
+
+.button,
+.project-link,
+.text-link,
+.nav-github {
+  animation: ctaInvite 2.9s cubic-bezier(.2,.8,.2,1) infinite;
+  box-shadow: 0 9px 22px rgba(17,17,15,.10);
+}
+
+.button {
+  border-width: 1px;
+  letter-spacing: .005em;
+}
+
+.button-primary {
+  background: #090908;
+  border-color: #090908;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(183,255,60,.16), 0 12px 28px rgba(17,17,15,.16);
+}
+
+.button-secondary {
+  background: rgba(17,17,15,.095);
+  border-color: rgba(17,17,15,.22);
+  color: #11110f;
+  box-shadow: 0 8px 20px rgba(17,17,15,.08);
+}
+
+.project-link,
+.text-link {
+  width: max-content;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid rgba(17,17,15,.11);
+  border-radius: 999px;
+  background: rgba(17,17,15,.075);
+  color: #151512;
+}
+
+.nav-github {
+  padding: 8px 12px;
+  border: 1px solid #11110f;
+  border-radius: 999px;
+  background: #11110f;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(183,255,60,.13), 0 8px 20px rgba(17,17,15,.12);
+}
+
+.button:hover,
+.project-link:hover,
+.text-link:hover,
+.nav-github:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px) scale(1.015);
+}
+
+.project-link:hover,
+.text-link:hover,
+.nav-github:hover {
+  background: #11110f;
+  color: var(--accent);
+  border-color: #11110f;
+}
+
+@keyframes ctaInvite {
+  0%, 68%, 100% { transform: translateY(0); }
+  74% { transform: translateY(-4px); }
+  80% { transform: translateY(0); }
+  86% { transform: translateY(-2px); }
+  92% { transform: translateY(0); }
+}
+
+/* Safe profile flip: the existing front remains untouched; JS only adds a back face
+   and toggles this class. No fixed runtime heights and no DOM reconstruction. */
+.hero-grid { perspective: 1400px; }
+
+.hero-card.flip-ready {
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform .78s cubic-bezier(.2,.72,.2,1), box-shadow .25s ease;
+  will-change: transform;
+}
+
+.hero-card.flip-ready.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.hero-card.flip-ready > :not(.hero-card-backface),
+.hero-card.flip-ready::before,
+.hero-card-backface {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-card-backface {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255,255,255,.54), transparent 28%),
+    linear-gradient(145deg, #b7ff3c 0%, #d7ff8d 55%, #efffd4 100%);
+  color: var(--ink);
+  transform: rotateY(180deg);
+}
+
+.hero-card-backface::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -90px;
+  bottom: -120px;
+  border: 1px solid rgba(17,17,15,.11);
+  border-radius: 50%;
+  box-shadow: 0 0 0 46px rgba(17,17,15,.035), 0 0 0 92px rgba(17,17,15,.025);
+}
+
+.flip-back-top,
+.flip-back-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hero-card-backface .micro-label { color: rgba(17,17,15,.52); }
+
+.flip-back-center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.flip-back-photo {
+  width: 136px;
+  height: 136px;
+  margin-bottom: 18px;
+  object-fit: cover;
+  border: 6px solid #11110f;
+  border-radius: 50%;
+  box-shadow: 0 18px 42px rgba(17,17,15,.16);
+}
+
+.flip-back-center h3 {
+  margin: 0;
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-size: clamp(31px, 4vw, 44px);
+  line-height: .93;
+  letter-spacing: -.06em;
+}
+
+.flip-back-center p {
+  max-width: 310px;
+  margin: 12px auto 0;
+  color: rgba(17,17,15,.66);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.flip-back-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.flip-back-tags span {
+  padding: 6px 8px;
+  border: 1px solid rgba(17,17,15,.15);
+  background: rgba(255,255,255,.30);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.flip-back-footer {
+  padding-top: 17px;
+  border-top: 1px solid rgba(17,17,15,.15);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+
+.flip-hint {
+  position: absolute;
+  right: 22px;
+  top: 52px;
+  z-index: 6;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.58);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  body::before { opacity: .27; background-size: 34px 34px, 32px 32px, 40px 40px, 38px 38px, 35px 35px, 34px 34px, 42px 42px, 34px 34px; }
+  body::after { opacity: .22; background-size: 33px 33px, 36px 36px, 34px 34px, 34px 34px, 31px 31px, 31px 31px, 30px 30px, 38px 38px; }
+  .flip-back-photo { width: 112px; height: 112px; margin-bottom: 14px; }
+  .flip-back-center h3 { font-size: 31px; }
+  .flip-back-center p { font-size: 11px; }
+  .flip-hint { top: 46px; right: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .button,
+  .project-link,
+  .text-link,
+  .nav-github { animation: none !important; }
+  .hero-card.flip-ready { transition: none; }
+}
