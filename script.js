@@ -1,17 +1,6 @@
 const header = document.querySelector('.site-header');
 const navLinks = [...document.querySelectorAll('.desktop-nav a')];
 
-const ensureMotionStyles = () => {
-  if (document.querySelector('link[data-portfolio-motion]')) return;
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'motion-v3.css';
-  link.dataset.portfolioMotion = 'true';
-  document.head.appendChild(link);
-};
-
-ensureMotionStyles();
-
 const setHeaderState = () => {
   if (!header) return;
   header.classList.toggle('is-scrolled', window.scrollY > 12);
@@ -86,6 +75,7 @@ const initProfileFlip = () => {
     flipped = next;
     card.classList.toggle('is-flipped', flipped);
     card.setAttribute('aria-pressed', String(flipped));
+    back.setAttribute('aria-hidden', String(!flipped));
   };
 
   const toggleFlip = () => setFlipped(!flipped);
@@ -107,7 +97,6 @@ const initProfileFlip = () => {
     startAutoFlip();
   };
 
-  // Allow the original entrance reveal to finish before the flip transform owns the card.
   window.setTimeout(activateFlip, 950);
 
   card.addEventListener('click', () => {
