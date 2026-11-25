@@ -58,3 +58,42 @@ html[data-theme="dark"] .worked-with-content .experience-tags span {
   color: rgba(244,245,237,.82);
   border-color: var(--theme-line);
 }
+
+
+/* Social profile placeholders and role-specific portfolio downloads. */
+.social-placeholders {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.social-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  border: 1px solid var(--theme-line);
+  border-radius: 999px;
+  color: var(--theme-muted);
+  opacity: .86;
+}
+
+.social-placeholder svg {
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+
+.download-grid .worked-with-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 155px;
+}
+
+.download-grid .project-link {
+  margin-top: 14px;
+  align-self: flex-start;
+}
