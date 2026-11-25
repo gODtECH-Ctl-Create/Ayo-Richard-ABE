@@ -14,7 +14,7 @@ const PROFILES = {
       ["Bivitech Coding Academy", "Mentor | Jan 2026 - Jul 2026", "Coding practice, practical problem-solving, and project-based learner support."],
       ["HNG Internship - Cohorts 13 and 14", "Digital Marketing, Quality Assurance, Product Management and Full-Stack Development", "Internship experience across digital marketing, software quality assurance, product management, frontend and backend development, deployment, and Development and Operations (DevOps) exposure."]
     ],
-    projects: [["Proqurement", "Construction procurement, supplier discovery, comparison, and market intelligence."], ["TechTrack", "Learning, bootcamp, internship, and career-development ecosystem."], ["ABE TechLab Operations", "Internal CRM, research, outreach, analytics, GitHub, and Artificial Intelligence (AI)-assisted operations workspace."], ["SAYRR", "Voice-first product concept for speech-to-text input."]],
+    projects: [["Proqurement", "Construction procurement, supplier discovery, comparison, and market intelligence."], ["TechTrack", "Learning, bootcamp, internship, and career-development ecosystem."], ["ABE TechLab Operations", "Internal customer relationship management, research, outreach, analytics, GitHub, and Artificial Intelligence (AI)-assisted operations workspace."], ["SAYRR", "Voice-first product concept for speech-to-text input."]],
     education: "Bachelor of Technology (B.Tech.) in Chemistry Education, Federal University of Technology, Minna."
   },
   "product-management": {
@@ -56,7 +56,7 @@ const PROFILES = {
       ["HNG Internship - Cohort 14", "Product Management and Full-Stack Development", "Collaborative experience across product management, frontend and backend development, deployment, and Development and Operations (DevOps) exposure."],
       ["Maka Integrated Technologies", "Product Manager", "Product requirements, prioritisation, technical coordination, and delivery, with product marketing responsibilities alongside product work."]
     ],
-    projects: [["ABE TechLab Operations", "Supabase and Vercel-based internal workspace for CRM, research, outreach, analytics, GitHub, and AI-assisted operations."], ["TechTrack", "Learning platform with modular courses, quizzes, tasks, internships, and bootcamps."], ["Proqurement", "Construction procurement product direction and platform implementation."], ["Waste2Work / Waste2Light", "Workspace access and time-billing product work involving membership, usage, and operations."], ["SAYRR", "Voice-first desktop product concept for speech-to-text input."]],
+    projects: [["ABE TechLab Operations", "Supabase and Vercel-based internal workspace for customer relationship management, research, outreach, analytics, GitHub, and Artificial Intelligence (AI)-assisted operations."], ["TechTrack", "Learning platform with modular courses, quizzes, tasks, internships, and bootcamps."], ["Proqurement", "Construction procurement product direction and platform implementation."], ["Waste2Work / Waste2Light", "Workspace access and time-billing product work involving membership, usage, and operations."], ["SAYRR", "Voice-first desktop product concept for speech-to-text input."]],
     education: "Bachelor of Technology (B.Tech.) in Chemistry Education, Federal University of Technology, Minna."
   },
   "technology-education": {
