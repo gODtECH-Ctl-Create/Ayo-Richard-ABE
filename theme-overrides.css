@@ -169,35 +169,12 @@ html[data-theme="dark"] .worked-with-content .experience-tags span {
 
 .contact-form-status {
   min-height: 30px;
+  max-height: 30px;
+  overflow: hidden;
   margin: 0;
   color: var(--theme-muted);
   font-size: 10px;
-  line-height: 1.5;
-}
-
-.contact-form-status[data-state="success"] {
-  color: #4d8700;
-}
-
-.contact-form-status[data-state="error"] {
-  color: #b44735;
-}
-
-html[data-theme="dark"] .contact-form-status[data-state="success"] {
-  color: #b7ff3c;
-}
-
-html[data-theme="dark"] .contact-form-status[data-state="error"] {
-  color: #ff9a88;
-}
-
-.contact-form-honey {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  line-height: 15px;
 }
 
 .contact-direct-links {
