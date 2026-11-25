@@ -97,3 +97,137 @@ html[data-theme="dark"] .worked-with-content .experience-tags span {
   margin-top: 14px;
   align-self: flex-start;
 }
+
+
+/* Contact form additions. Existing section layout and visual system are preserved. */
+.contact-form-wrap {
+  width: min(100%, 390px);
+}
+
+.contact-form {
+  display: grid;
+  gap: 13px;
+  width: 100%;
+}
+
+.contact-field {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-field label {
+  color: var(--theme-text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--theme-line-strong);
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: var(--theme-surface);
+  color: var(--theme-text);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-field textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--theme-muted);
+  opacity: .8;
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.contact-submit {
+  justify-self: start;
+  cursor: pointer;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: .68;
+}
+
+.contact-form-status {
+  min-height: 30px;
+  margin: 0;
+  color: var(--theme-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.contact-form-status[data-state="success"] {
+  color: #4d8700;
+}
+
+.contact-form-status[data-state="error"] {
+  color: #b44735;
+}
+
+html[data-theme="dark"] .contact-form-status[data-state="success"] {
+  color: #b7ff3c;
+}
+
+html[data-theme="dark"] .contact-form-status[data-state="error"] {
+  color: #ff9a88;
+}
+
+.contact-form-honey {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.contact-direct-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.contact-direct-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--theme-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.contact-direct-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 920px) {
+  .contact-form-wrap {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-form-wrap {
+    width: 100%;
+  }
+}
