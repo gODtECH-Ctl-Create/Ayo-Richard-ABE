@@ -21,7 +21,7 @@
     };
 
     form.addEventListener("invalid", () => {
-      show("Please complete the required fields before sending.");
+      show("Please complete required fields.");
     }, true);
 
     form.addEventListener("submit", async (event) => {
@@ -74,17 +74,17 @@
         }
 
         form.reset();
-        show("Message sent. Thank you for reaching out.", "success");
+        show("Message sent. Thank you!", "success");
       } catch (error) {
         console.error("Portfolio contact form submission failed:", error);
 
         const message = error instanceof Error ? error.message : "";
         if (error?.name === "AbortError") {
-          show("No response yet. Please try again or email me directly.", "error");
+          show("No reply yet. Try again or email me.", "error");
         } else if (/activat|confirm/i.test(message)) {
-          show("Email setup needs activation. Please email me directly for now.", "error");
+          show("Email setup pending. Please email me.", "error");
         } else {
-          show("Message not sent. Please email me directly or try again.", "error");
+          show("Message not sent. Email me directly.", "error");
         }
       } finally {
         window.clearTimeout(timeout);
