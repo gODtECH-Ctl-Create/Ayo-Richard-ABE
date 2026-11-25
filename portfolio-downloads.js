@@ -4,7 +4,7 @@ const PROFILES = {
     file: "ayo-richard-abe-general-profile.pdf",
     role: "PRODUCT MANAGER | PRODUCT MARKETER | PRODUCT BUILDER | TECHNOLOGY EDUCATOR",
     summary: "Product professional, builder, and technology educator working across product strategy, product management, product marketing, software delivery, systems, and learning programmes. I translate user and business problems into product direction, practical workflows, and useful solutions.",
-    skills: ["Product discovery and requirements", "Product strategy and prioritisation", "Product marketing and positioning", "Roadmaps and delivery coordination", "Technical product development", "Systems and workflow design", "Technology education and mentoring", "AI-assisted workflows and automation"],
+    skills: ["Product discovery and requirements", "Product strategy and prioritisation", "Product marketing and positioning", "Roadmaps and delivery coordination", "Technical product development", "Systems and workflow design", "Technology education and mentoring", "Artificial Intelligence (AI)-assisted workflows and automation"],
     experience: [
       ["Maka Integrated Technologies", "Product Manager | Product Marketing", "Product direction, requirements, prioritisation, coordination, user needs, delivery, positioning, and product-value communication."],
       ["Cyfamod Technologies", "Product Manager | Product Marketing", "Education-technology workflows, product requirements, user needs, delivery, positioning, and product-value communication."],
@@ -12,9 +12,9 @@ const PROFILES = {
       ["TechTrack Academy", "Instructor and Programs Manager | Aug 2026 - Present", "Instruction, programme coordination, project-based learning, and learner development."],
       ["Waste2Light Technologies", "Engineering Advisor | Jul 2026 - Present", "Technical direction, systems thinking, solution design, and software decisions."],
       ["Bivitech Coding Academy", "Mentor | Jan 2026 - Jul 2026", "Coding practice, practical problem-solving, and project-based learner support."],
-      ["HNG Internship - Cohorts 13 and 14", "Digital Marketing, QA, Product Management and Full-Stack Development", "Internship experience across digital marketing, software quality assurance, product management, frontend and backend development, deployment, and DevOps exposure."]
+      ["HNG Internship - Cohorts 13 and 14", "Digital Marketing, Quality Assurance, Product Management and Full-Stack Development", "Internship experience across digital marketing, software quality assurance, product management, frontend and backend development, deployment, and Development and Operations (DevOps) exposure."]
     ],
-    projects: [["Proqurement", "Construction procurement, supplier discovery, comparison, and market intelligence."], ["TechTrack", "Learning, bootcamp, internship, and career-development ecosystem."], ["ABE TechLab Operations", "Internal CRM, research, outreach, analytics, GitHub, and AI-assisted operations workspace."], ["SAYRR", "Voice-first product concept for speech-to-text input."]],
+    projects: [["Proqurement", "Construction procurement, supplier discovery, comparison, and market intelligence."], ["TechTrack", "Learning, bootcamp, internship, and career-development ecosystem."], ["ABE TechLab Operations", "Internal CRM, research, outreach, analytics, GitHub, and Artificial Intelligence (AI)-assisted operations workspace."], ["SAYRR", "Voice-first product concept for speech-to-text input."]],
     education: "Bachelor of Technology (B.Tech.) in Chemistry Education, Federal University of Technology, Minna."
   },
   "product-management": {
@@ -28,7 +28,7 @@ const PROFILES = {
       ["HNG Internship - Cohort 14", "Product Management and Full-Stack Development", "Product-management practice alongside frontend and backend development, deployment, and collaborative delivery."],
       ["TechTrack Academy", "Instructor and Programs Manager | Aug 2026 - Present", "Learning-programme coordination and project-based learning, with attention to learner experience and programme operations."]
     ],
-    projects: [["Proqurement", "Supplier discovery, comparison, sourcing, and market intelligence for construction procurement."], ["TechTrack", "Learning management, bootcamp, and internship ecosystem."], ["OHealth Plus", "Healthcare platform direction, bookings, professional workflows, APIs, and dashboards."], ["ABE TechLab Operations", "Internal operations platform for CRM, research, outreach, analytics, and AI workflows."], ["Vettika", "Recruitment product with job campaigns, candidate registration, and scheduled AI interviews."]],
+    projects: [["Proqurement", "Supplier discovery, comparison, sourcing, and market intelligence for construction procurement."], ["TechTrack", "Learning management, bootcamp, and internship ecosystem."], ["OHealth Plus", "Healthcare platform direction, bookings, professional workflows, Application Programming Interfaces (APIs), and dashboards."], ["ABE TechLab Operations", "Internal operations platform for customer relationship management, research, outreach, analytics, and Artificial Intelligence (AI) workflows."], ["Vettika", "Recruitment product with job campaigns, candidate registration, and scheduled Artificial Intelligence (AI) interviews."]],
     education: "Bachelor of Technology (B.Tech.) in Chemistry Education, Federal University of Technology, Minna."
   },
   "product-marketing": {
@@ -39,7 +39,7 @@ const PROFILES = {
     experience: [
       ["Maka Integrated Technologies", "Product Manager with Product Marketing Responsibilities", "Product direction, requirements, prioritisation, coordination, and delivery alongside product positioning and product-value communication."],
       ["Cyfamod Technologies", "Product Manager with Product Marketing Responsibilities", "Education-technology workflows and product requirements, with contributions to product positioning and explaining value to intended users."],
-      ["BuMarS", "HR and Marketing Lead | Marketing Execution Planning | 2025", "Supported Phase 1 proof-of-concept marketing planning for a construction-procurement product, including awareness-led campaign direction and initial audience and community growth targets. Targets were planning objectives, not reported results."],
+      ["BuMarS", "Human Resources and Marketing Lead | Marketing Execution Planning | 2025", "Supported Phase 1 proof-of-concept marketing planning for a construction-procurement product, including awareness-led campaign direction and initial audience and community growth targets. Targets were planning objectives, not reported results."],
       ["HNG Internship - Cohort 13", "Digital Marketing and Quality Assurance", "Practical internship experience across digital-marketing and software-quality-assurance work."]
     ],
     projects: [["Proqurement", "Construction procurement product context spanning marketplace discovery, supplier visibility, sourcing, and market intelligence."], ["Vettika", "Recruitment product with campaign-based job discovery and candidate workflows."], ["ABE TechLab", "Technology studio and product environment supporting software, systems, and product development."]],
@@ -49,11 +49,11 @@ const PROFILES = {
     file: "ayo-richard-abe-product-development.pdf",
     role: "PRODUCT DEVELOPMENT | TECHNICAL PRODUCT BUILDING",
     summary: "Hands-on product builder with a product-management mindset. I work from problem definition and requirements through interface implementation, backend and data integration, system workflows, testing, and iterative delivery across web applications, learning platforms, and operational systems.",
-    skills: ["Product development and implementation", "JavaScript and TypeScript", "React and Next.js", "Node.js and Python", "PostgreSQL and Supabase", "APIs and system integration", "Git, GitHub, and delivery workflows", "Product requirements and coordination"],
+    skills: ["Product development and implementation", "JavaScript and TypeScript", "React and Next.js", "Node.js and Python", "PostgreSQL and Supabase", "Application Programming Interfaces (APIs) and system integration", "Git, GitHub, and delivery workflows", "Product requirements and coordination"],
     experience: [
       ["ABE TechLab / Independent Product Work", "Product Builder and Technical Product Lead", "Builds and coordinates software products and internal systems, connecting product decisions, implementation, integrations, and workflows."],
       ["TechTrack", "Product Builder and Programme Lead", "Built and shaped a learning and career-development ecosystem with modules, bootcamps, internships, cohorts, and learner-progress workflows."],
-      ["HNG Internship - Cohort 14", "Product Management and Full-Stack Development", "Collaborative experience across product management, frontend and backend development, deployment, and DevOps exposure."],
+      ["HNG Internship - Cohort 14", "Product Management and Full-Stack Development", "Collaborative experience across product management, frontend and backend development, deployment, and Development and Operations (DevOps) exposure."],
       ["Maka Integrated Technologies", "Product Manager", "Product requirements, prioritisation, technical coordination, and delivery, with product marketing responsibilities alongside product work."]
     ],
     projects: [["ABE TechLab Operations", "Supabase and Vercel-based internal workspace for CRM, research, outreach, analytics, GitHub, and AI-assisted operations."], ["TechTrack", "Learning platform with modular courses, quizzes, tasks, internships, and bootcamps."], ["Proqurement", "Construction procurement product direction and platform implementation."], ["Waste2Work / Waste2Light", "Workspace access and time-billing product work involving membership, usage, and operations."], ["SAYRR", "Voice-first desktop product concept for speech-to-text input."]],
@@ -62,15 +62,15 @@ const PROFILES = {
   "technology-education": {
     file: "ayo-richard-abe-technology-education.pdf",
     role: "TECHNOLOGY EDUCATOR | INSTRUCTOR | PROGRAMME LEAD",
-    summary: "Technology educator and programme lead with a background in Chemistry Education, school leadership, learner mentoring, and practical technology learning. I help learners build confidence through clear instruction, guided practice, project-based learning, and responsible use of technology and AI.",
-    skills: ["Technology instruction and learner support", "Programme coordination", "Project-based learning", "Coding mentorship and practice", "Curriculum and lesson planning", "Classroom and school operations", "Student development and assessment", "Responsible AI learning"],
+    summary: "Technology educator and programme lead with a background in Chemistry Education, school leadership, learner mentoring, and practical technology learning. I help learners build confidence through clear instruction, guided practice, project-based learning, and responsible use of technology and Artificial Intelligence (AI).",
+    skills: ["Technology instruction and learner support", "Programme coordination", "Project-based learning", "Coding mentorship and practice", "Curriculum and lesson planning", "Classroom and school operations", "Student development and assessment", "Responsible Artificial Intelligence learning"],
     experience: [
       ["TechTrack Academy", "Instructor and Programs Manager | Aug 2026 - Present", "Technology instruction, programme coordination, project-based learning, and learner development across programmes."],
       ["Future Speakers International School", "Head Teacher | Jul 2025 - Present", "Teaching and academic coordination, lesson planning, student development, staff coordination, and school operations."],
       ["Bivitech Coding Academy", "Mentor | Jan 2026 - Jul 2026", "Mentored learners through coding practice, practical problem-solving, and project work."],
-      ["Technology Learning Activities", "AI Animation Facilitator", "Facilitated learning activities introducing children to AI-assisted animation and responsible technology use."]
+      ["Technology Learning Activities", "Artificial Intelligence Animation Facilitator", "Facilitated learning activities introducing children to Artificial Intelligence (AI)-assisted animation and responsible technology use."]
     ],
-    projects: [["TechTrack", "Learning and career-development ecosystem for courses, bootcamps, internships, and learner progression."], ["TechTrack Kids", "Kid-focused learning experience concept for technology and responsible AI learning."], ["Cyfamod SMS", "School management software for students, classes, attendance, results, fees, staff, and communication."]],
+    projects: [["TechTrack", "Learning and career-development ecosystem for courses, bootcamps, internships, and learner progression."], ["TechTrack Kids", "Kid-focused learning experience concept for technology and responsible Artificial Intelligence learning."], ["Cyfamod SMS", "School management software for students, classes, attendance, results, fees, staff, and communication."]],
     education: "Bachelor of Technology (B.Tech.) in Chemistry Education, Federal University of Technology, Minna."
   }
 };
