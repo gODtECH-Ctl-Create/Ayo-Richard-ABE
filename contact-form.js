@@ -28,7 +28,7 @@
       event.preventDefault();
 
       if (!form.checkValidity()) {
-        show("Please complete the required fields before sending.");
+        show("Please complete required fields.");
         form.reportValidity();
         return;
       }
