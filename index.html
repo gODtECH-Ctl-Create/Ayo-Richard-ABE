@@ -72,9 +72,9 @@
             <h1>I build products that make difficult work feel <span>simpler.</span></h1>
             <p class="hero-lead">I'm <strong>Ayo Richard Abe</strong>, a product manager, product marketer, product builder, and technology educator. I work across product strategy, product marketing, and software delivery, helping teams turn ideas into useful products and communicate their value to the people who need them.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#work">See selected work <span>↓</span></a>
+              <a class="button button-primary" href="#work">View Projects <span>↓</span></a>
               <a class="button button-secondary" href="https://github.com/gODtECH-Ctl-Create" target="_blank" rel="noreferrer">Explore GitHub <span>↗</span></a>
-              <a class="button button-secondary" href="#downloads">Download profile <span>↓</span></a>
+              <a class="button button-secondary" href="#contact">Contact Me <span>↗</span></a>
             </div>
             <div class="hero-note"><span class="status-dot"></span> Currently building, testing ideas, and turning validated work into stronger systems.</div>
           </div>
@@ -441,12 +441,65 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contact"><div class="container contact-card"><div><p class="eyebrow"><span class="eyebrow-dot"></span> LET'S BUILD</p><h2>Got a problem worth <em>solving?</em></h2><p>Whether you need a product shaped, a software idea built, or a system that makes the work easier, start with the problem.</p></div><div class="contact-actions"><a class="button button-primary" href="https://github.com/gODtECH-Ctl-Create" target="_blank" rel="noreferrer">Connect on GitHub <span>↗</span></a><a class="button button-secondary" href="#work">Back to work <span>↑</span></a></div></div></section>
+      <section class="section contact-section" id="contact">
+        <div class="container contact-card">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> LET'S BUILD</p>
+            <h2>Got a problem worth <em>solving?</em></h2>
+            <p>Have a role, project, collaboration, or idea in mind? Send me a message and tell me what you are working on. I'll get back to you by email.</p>
+            <div class="contact-direct-links">
+              <a href="mailto:ayoabe24@gmail.com">Email me <span>↗</span></a>
+              <a href="tel:+2348140479738">Call me <span>↗</span></a>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form class="contact-form" id="portfolio-contact-form" action="https://formsubmit.co/ayoabe24@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New portfolio enquiry · Ayo Richard Abe" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_url" value="https://godtech-ctl-create.github.io/Ayo-Richard-ABE/" />
+              <div class="contact-form-honey" aria-hidden="true">
+                <label for="contact-website">Leave this field empty</label>
+                <input id="contact-website" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="contact-field">
+                <label for="contact-name">Your name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Full name" autocomplete="name" maxlength="100" required />
+              </div>
+              <div class="contact-field">
+                <label for="contact-email">Email address</label>
+                <input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="160" required />
+              </div>
+              <div class="contact-field">
+                <label for="contact-interest">What would you like to discuss?</label>
+                <select id="contact-interest" name="interest" required>
+                  <option value="" selected disabled>Select a topic</option>
+                  <option>Product Management</option>
+                  <option>Product Marketing</option>
+                  <option>Product Development</option>
+                  <option>Technology Education</option>
+                  <option>Consulting or Collaboration</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="contact-field">
+                <label for="contact-message">Your message</label>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Tell me a little about the opportunity or project..." minlength="10" maxlength="4000" required></textarea>
+              </div>
+              <button class="button button-primary contact-submit" type="submit">
+                <span class="contact-submit-label">Send Message</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+              <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite">Your message will be sent to my email. You can also email or call me directly.</p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Ayo Richard Abe · gODtECH<br /><a href="mailto:ayoabe24@gmail.com">ayoabe24@gmail.com</a> · <a href="tel:+2348140479738">08140479738</a></span><span>Build something useful. Make it matter.</span><a href="#top">Back to top ↑</a></div></footer>
     <script src="theme.js"></script>
     <script src="script.js"></script>
+    <script src="contact-form.js"></script>
     <script src="portfolio-downloads.js"></script>
   </body>
 </html>
