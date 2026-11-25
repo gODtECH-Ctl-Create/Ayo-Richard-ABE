@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://godtech-ctl-create.github.io/Ayo-Richard-ABE/sitemap.xml
